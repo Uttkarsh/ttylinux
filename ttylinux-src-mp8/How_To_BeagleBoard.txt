@@ -1,0 +1,17 @@
+The standard BeagleBoard ttylinux uses a standard unpatched kernel from
+kernel.org.  Maybe you can get a better OMAP Linux kernel and build BeagleBoard
+ttylinux with it.  Look in the site/platform-beagle_xm directory; there is at
+least one link and a corresponding kernel configuration file.  Get an OMAP
+Linux kernel, possibly from one of the documented links, and change the
+ttylinux-config.sh file to use your custom kernel.
+
+The ttylinux-config.sh file has some comments that describe how to use your
+own custom kernel; for BeagleBoard ttylinux, change the TTYLINUX_KERNEL setting
+to be something like:
+
+TTYLINUX_KERNEL="omap-2.6" # Linux kernel override; empty for normal build.
+
+The links provided in the site/platform-beagle_xm directory may not provide a
+good source for an OMAP Linux kernel and you may need to find your own OMAP
+BeagleBoard-supporting Linux source tree, and you may also need to make your
+own kernel configuration file.

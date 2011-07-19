@@ -1,0 +1,2891 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>ttylinux User Guide</title>
+<meta name="description" content="ttylinux user Guide">
+<meta name="keywords" content="temp">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2002-2-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="temp.css">
+
+</head>
+
+<body >
+
+<p>
+<h1 align="CENTER">ttylinux User Guide</h1>
+<div class="author_info">
+
+<p align="CENTER"><strong>PC Platform:</strong></p>
+<p align="CENTER"><i>Version 9.3 - i486</i></p>
+<p align="LEFT"><small>Version 11.1 - i686, x86_64</small></p>
+</div>
+
+<p>
+
+<br>
+
+<h2><a name="SECTION00010000000000000000">
+Contents</a>
+</h2>
+<!--Table of Contents-->
+
+<ul class="TofC">
+<li><a name="tex2html47"
+  href="User_Guide.html#SECTION00020000000000000000">1 Introduction</a>
+<ul>
+<li><a name="tex2html48"
+  href="User_Guide.html#SECTION00021000000000000000">1.1 ttylinux Overview</a>
+<li><a name="tex2html49"
+  href="User_Guide.html#SECTION00022000000000000000">1.2 Licenses</a>
+</ul>
+<br>
+<li><a name="tex2html50"
+  href="User_Guide.html#SECTION00030000000000000000">2 Starting with ttylinux</a>
+<ul>
+<li><a name="tex2html51"
+  href="User_Guide.html#SECTION00031000000000000000">2.1 System Requirements</a>
+<li><a name="tex2html52"
+  href="User_Guide.html#SECTION00032000000000000000">2.2 File Downloads</a>
+<li><a name="tex2html53"
+  href="User_Guide.html#SECTION00033000000000000000">2.3 Booting a CD-ROM Image</a>
+<li><a name="tex2html54"
+  href="User_Guide.html#SECTION00034000000000000000">2.4 Setting Up a USB or Flash Drive</a>
+</ul>
+<br>
+<li><a name="tex2html55"
+  href="User_Guide.html#SECTION00040000000000000000">3 Installing from CD-ROM</a>
+<ul>
+<li><a name="tex2html56"
+  href="User_Guide.html#SECTION00041000000000000000">3.1 CD-ROM Image Overview</a>
+<li><a name="tex2html57"
+  href="User_Guide.html#SECTION00042000000000000000">3.2 RAM Disk or Persistent Storage Boot</a>
+<li><a name="tex2html58"
+  href="User_Guide.html#SECTION00043000000000000000">3.3 Transfer from CD-ROM - Make a RAM Disk Boot System</a>
+<li><a name="tex2html59"
+  href="User_Guide.html#SECTION00044000000000000000">3.4 Install from CD-ROM - Make a Persistent Storage Boot System</a>
+</ul>
+<br>
+<li><a name="tex2html60"
+  href="User_Guide.html#SECTION00050000000000000000">4 System Guide</a>
+<ul>
+<li><a name="tex2html61"
+  href="User_Guide.html#SECTION00051000000000000000">4.1 Boot Parameters</a>
+<li><a name="tex2html62"
+  href="User_Guide.html#SECTION00052000000000000000">4.2 Basic Features</a>
+<li><a name="tex2html63"
+  href="User_Guide.html#SECTION00053000000000000000">4.3 Bootup, Shutdown and System Configuration</a>
+<li><a name="tex2html64"
+  href="User_Guide.html#SECTION00054000000000000000">4.4 Shell Environment</a>
+<li><a name="tex2html65"
+  href="User_Guide.html#SECTION00055000000000000000">4.5 Using Dropbear for SSH</a>
+<li><a name="tex2html66"
+  href="User_Guide.html#SECTION00056000000000000000">4.6 Using an Ethernet Network</a>
+<li><a name="tex2html67"
+  href="User_Guide.html#SECTION00057000000000000000">4.7 Using the Firewall</a>
+<li><a name="tex2html68"
+  href="User_Guide.html#SECTION00058000000000000000">4.8 Using NFS</a>
+<li><a name="tex2html69"
+  href="User_Guide.html#SECTION00059000000000000000">4.9 Using Dialup</a>
+<li><a name="tex2html70"
+  href="User_Guide.html#SECTION000510000000000000000">4.10 Package Management</a>
+<li><a name="tex2html71"
+  href="User_Guide.html#SECTION000511000000000000000">4.11 Using the sysconfig Script</a>
+<li><a name="tex2html72"
+  href="User_Guide.html#SECTION000512000000000000000">4.12 Depricated and Legacy Items</a>
+</ul>
+<br>
+<li><a name="tex2html73"
+  href="User_Guide.html#SECTION00060000000000000000">5 Add-ons</a>
+<li><a name="tex2html74"
+  href="User_Guide.html#SECTION00070000000000000000">6 Contact and Help</a>
+<li><a name="tex2html75"
+  href="User_Guide.html#SECTION00080000000000000000">A. ttylinux-specific Commands Overview</a>
+<li><a name="tex2html76"
+  href="User_Guide.html#SECTION00090000000000000000">B. Flash_Disk_Howto.txt</a>
+</ul>
+<!--End of Table of Contents-->
+<p>
+
+<h1><a name="SECTION00020000000000000000">
+<span class="arabic">1</span> Introduction</a>
+</h1>
+
+<p>
+ttylinux is a small, minimal Linux distribution. It is freely available as a
+bootable CD-ROM image. The entire source distribution that builds the bootable
+CD-ROM image is also freely available.
+
+<p>
+This document provides information about using and installing ttylinux. The
+audience of this document should be comfortable with using the Bash command
+line.
+
+<p>
+The word ttylinux has no capital letters, ever. "TTYlinux", "TTY-Linux",
+"TtyLinux", "Ttylinux" and all other usages of a capital letter or extra symbol
+are wrong. When spoken, ttylinux sounds like "t - t - y - linux".
+
+<p>
+Using the ttylinux source distribution and building ttylinux are beyond the
+scope of this document. The source distribution has a short text file
+describing how to build ttylinux. When available, the Developer Guide describes
+building ttylinux.
+
+<p>
+ttylinux is available for several different CPUs and hardware architectures.
+This User Guide is primarily for the <i>PC platform</i> ttylinux availble for
+the <b>i486</b>, <b>i686</b> and <b>x86_64</b> CPUs; however, most of this User
+Guide applies to the <i>Macintosh platform</i> ttylinux available for the 32-bit
+<b>PowerPC</b> CPU.
+
+<p>
+
+<h2><a name="SECTION00021000000000000000">
+<span class="arabic">1</span>.<span class="arabic">1</span> ttylinux Overview</a>
+</h2>
+
+<p>
+ttylinux tries to use as little space as possible and be a familiar and
+complete command-line Linux system, with fairly up-to-date Linux kernel and
+program utilities. It provides multi-tasking, multi-user Linux with networking
+capabilities in no more than 8 MB of disk space. It is prepared for Internet
+access by Ethernet. A text-based web browser, command-line remote login secure
+client and server, NFS client and an FTP server are a part of ttylinux.
+
+<p>
+ttylinux can be installed onto a disk drive, both spinning hard drive or flash
+drive such as a USB memory stick; it can be manually installed or installed by
+using an installer script. Installation by installer script or manual
+installation can be done with ttylinux itself or by using a different Linux
+system.
+
+<p>
+The ttylinux file system, excluding the Linux kernel, is 8 MB in size. Using
+the ttylinux installer script, a Linux kernel between 2.5 and 3.5 MB will also
+be installed. This makes a minimum workable size of about 12 MB for a hard drive
+partition on which to install ttylinux, although 32 MB of RAM are needed to
+use the automated ttylinux installer script.
+
+<p>
+ttylinux includes a package management script capable of <i>installing</i>,
+<i>making</i>, <i>removing</i> and <i>querying</i> software packages and their
+files. The package manager can <i>list</i> and <i>install</i> packages from an
+external repository via http. Pacman is useful for adapting ttylinux to
+specific needs.
+
+<p>
+<b>What ttylinux Is Not</b>
+
+<p>
+ttylinux is not a typical Linux distribution; it does not have a graphical user
+interface, software development tools, music player, document preparation nor
+printing tools, databases nor network services such as BIND, News Server nor
+Mail Transfer Agents.
+
+<p>
+<b>What ttylinux Can Do</b>
+
+<p>
+ttylinux is intended to be useful as the basis of an embedded system or a
+directed-purpose system: with its small size ttylinux boots quickly from flash
+drives and CR-ROM; it has been used as a system fix/repair tool, as a
+simulation host, and is a good basis for a rescue or installation CD-ROM.
+
+<p>
+ttylinux provides a working Linux environment with its boot image, and custom
+task-specific scripts can mount other parts of the file system to provide a
+larger system.
+
+<p>
+ttylinux is useful on computers which are considered obsolete, such as 486SX
+PC. It is for people who want to have a minimal Linux distribution to run when
+little space is available or needed. Some users may want to use the ttylinux
+file system but configure and build their own Linux kernel.
+
+<p>
+ttylinux can serve as a rough prototype of a larger system, since it uses the
+same C library, glibc, as full Linux systems, compiling programs on a different
+Linux computer and copying them to the ttylinux file system <span id="txt58">can</span>
+result in working programs. <b>However this is not a supported feature.</b>
+Programs compiled outside the normal ttylinux build process may require
+libraries not present in ttylinux. Worse, they may be compiled on a computer
+with different Linux kernel capabilities and make system calls not present in
+ttylinux.
+
+<p>
+ttylinux is for people who have Linux experience; it is not for beginners,
+unless you want to learn how a Linux system works underneath the Graphical User
+Interfaces. You must be able to use the interactive shell command-line, and it
+helps to know your way around Linux system. Most of the programs are smaller
+versions of the common Unix utilities.
+
+<p>
+
+<h2><a name="SECTION00022000000000000000">
+<span class="arabic">1</span>.<span class="arabic">2</span> Licenses</a>
+</h2>
+
+<p>
+The software packages that are part of ttylinux are licensed under a number of
+different open source licenses, as listed below. The initialization and system
+service scripts developed by the ttylinux project are licensed under the GNU
+General Public License; a copy of this license is included in the file
+<tt>COPYING</tt>.
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Package</td>
+<td align="LEFT">Version</td>
+<td align="LEFT">License</td>
+</tr>
+<tr><td align="LEFT">bash</td>
+<td align="LEFT">3.2.48</td>
+<td align="LEFT">GPL</td>
+</tr>
+<tr><td align="LEFT">busybox</td>
+<td align="LEFT">1.14.3</td>
+<td align="LEFT">GPL</td>
+</tr>
+<tr><td align="LEFT">dropbear</td>
+<td align="LEFT">0.52</td>
+<td align="LEFT">MIT</td>
+</tr>
+<tr><td align="LEFT">e2fsprogs</td>
+<td align="LEFT">1.41.8</td>
+<td align="LEFT">GPL</td>
+</tr>
+<tr><td align="LEFT">glibc</td>
+<td align="LEFT">2.9</td>
+<td align="LEFT">LGPL</td>
+</tr>
+<tr><td align="LEFT">iptables</td>
+<td align="LEFT">1.4.4</td>
+<td align="LEFT">GPL</td>
+</tr>
+<tr><td align="LEFT">lilo</td>
+<td align="LEFT">22.8</td>
+<td align="LEFT">BSD</td>
+</tr>
+<tr><td align="LEFT">ncurses</td>
+<td align="LEFT">5.6</td>
+<td align="LEFT">MIT</td>
+</tr>
+<tr><td align="LEFT">ppp</td>
+<td align="LEFT">2.4.5</td>
+<td align="LEFT">GPL</td>
+</tr>
+<tr><td align="LEFT">retawq</td>
+<td align="LEFT">0.2.6c</td>
+<td align="LEFT">GPL</td>
+</tr>
+</table>
+</div>
+
+<p>
+For more information on the licenses, please visit the <tt>opensource.org</tt>
+website.
+
+<p>
+
+<h1><a name="SECTION00030000000000000000">
+<span class="arabic">2</span> Starting with ttylinux</a>
+</h1>
+
+<p>
+This section has a general overview of the ttylinux download CD-ROM image and
+also describes the system hardware requirements for using ttylinux, from where
+to download ttylinux, what to download and how to use the downloaded images.
+
+<p>
+ttylinux has three basic parts: a boot loader, a Linux kernel, and a root
+file system. All three of these are in the CD-ROM image; the CD-ROM image can
+be burned onto a blank CD-ROM disc and then booted. When booted, the root
+file system from the CD-ROM is decompressed and becomes a read/write root file
+system in a RAM disk in memory. Note that changes to any of the files while
+running ttylinux are lost, as they are in a RAM disk. Booting the ttylinux
+CD-ROM is further described in section <a href="#bootcd">2.3</a>.
+
+<p>
+Installing ttylinux from the bootable CD-ROM onto a hard drive is described in
+section <a href="#bootfixed">3.4</a>. Installation onto a hard drive makes a system
+different from the bootable CD-ROM; the installed ttylinux has a read/write
+root file system directly on a spinning hard disk or solid state disk, not in a
+RAM disk. The advantage of a hard drive ttylinux system over the RAM disk
+system is that file changes are not lost.
+
+<p>
+ttylinux can be put onto a flash drive, such as a USB drive, which can be made
+bootable. This copies the RAM disk boot method to the flash drive; when the
+flash drive is booted, the root file system from the flash drive is decompressed
+and becomes a read/write root file system in a RAM disk in memory. As with the
+system booted from CD-ROM, the changes to files are lost when the system shuts
+down. The process of putting ttylinux onto a flash drive is described in more
+detail in section <a href="#bootflash">3.3</a>.
+
+<p>
+The ttylinux root file system is a compressed image file on the CD-ROM; it can
+be copied and used with a different custom kernel, one that you make, and put
+onto other media with your boot loader of choice. This process is beyond the
+scope of this document, but the requirements for a ttylinux custom kernel are
+described in more detail in section <a href="#customkernel">2.1.1</a>.
+
+<p>
+
+<h2><a name="SECTION00031000000000000000">
+<span class="arabic">2</span>.<span class="arabic">1</span> System Requirements</a>
+</h2>
+
+<p>
+ttylinux is available for several different CPUs and hardware architectures;
+currently, ttylinux operation on these <i>PC compatible</i> architectures is
+described in this User Guide:
+<br><tt>ttylinux 9.3 </tt> - <b>i486</b>, specifically the i486 instruction set
+<br><tt>ttylinux 11.1</tt> - <b>i686</b>, Pentium Pro instruction set
+<br><tt>ttylinux 11.1</tt> - <b>x86_64</b>
+
+<p>
+Other ttylinux systems are very similar; the following ttylinux architectures
+are likely to operate as described in this User Guide:
+<br><tt>ttylinux 11.1 </tt> - <b>PowerPC</b>, 740/750 instruction set 32-bit <i>Macintosh Platform</i>
+
+<p>
+<b>CPUs and Computers</b>
+
+<p>
+i486 ttylinux 9.3 requires an i486SX or newer processor in a PC compatible
+computer. It will not work with the i386 CPU; the glibc version in ttylinux
+uses CPU instructions the i386 CPU does not have. Any x86 compatible CPU
+supporting i486, and upward compatible, that is in a PC compatible computer
+should work.
+
+<p>
+i686 ttylinux 11.1 requires Pentium Pro or newer processor in a PC compatible
+computer. Any x86 compatible CPU supporting Pentium Pro, and upward compatible,
+that is in a PC compatible computer should work.
+
+<p>
+x86_64 ttylinux 11.1 supports generic 64-bit AMD/x86 processor in a PC
+compatible computer.
+
+<p>
+<b>Memory</b>
+
+<p>
+ttylinux uses an 8 MB RAM disk when booted from CD-ROM. The kernel on the
+CD-ROM is fairly large; it supports a broad range of hardware, so at least 24
+MB of memory are required for full operation with i486 ttylinux 9.3, and at
+least 32 MB of memory are required for full operation with i686 or x86_64
+ttylinux 11.1.
+
+<p>
+Using a custom kernel supporting only hardware for a particular computer, an
+i486 ttylinux system may require as little as 16 MB of memory to run. If the
+file system is installed onto a read/write disk drive, spinning or flash, and a
+custom kernel is used, an i486 ttylinux will run within 8 MB of RAM.
+
+<p>
+
+<h3><a name="SECTION00031100000000000000"></a>
+<a name="customkernel"></a>
+<br>
+<span class="arabic">2</span>.<span class="arabic">1</span>.<span class="arabic">1</span> Custom Kernel Requirements
+</h3>
+
+<p>
+The ttylinux root file system is an 8 MB ext2 file system; the file system
+image is compressed and resides in the CD-ROM image. After burning the CD-ROM
+image to a blank CD-ROM disc, or mounting the CD-ROM image via loop device,
+you can find the compressed root file system; it is <tt>boot/filesys.gz</tt>.
+This root file system can be used with a different custom kernel.
+
+<p>
+ttylinux 9.3 is built with <b>Linux 2.6.20</b> header files, and ttylinux 11.1
+is built with <b>Linux 2.6.30.5</b> header files. Linux kernels are not
+backwards-compatible; software using the capabilities of a given kernel version
+cannot be <i>expected</i> to work with any previous kernel version. Using a
+kernel older than the one that ttylinux was built with cannot be supported in
+any way. With that described, with the small number of packages in the ttylinux
+system, ttylinux works to some extent with any Linux kernel from 2.6.0 upwards.
+
+<p>
+Your custom kernel needs to support all the hardware you want to use, plus some
+additional requirements for ttylinux itself.
+
+<p>
+A kernel used for running ttylinux needs to have <b>ramdisk</b> support, <b>initial ramdisk</b> support, and a default ramdisk size of at least <b>8192</b>.
+Note the kernel configuration has a default ramdisk size of 4096, which is not
+big enough.
+
+<p>
+If you want to use the basic firewall script of ttylinux, your kernel also
+needs iptables support with the <b>netlink</b> interface.
+
+<p>
+A ttylinux kernel needs to support <b>ext2 file systems</b>.
+
+<p>
+If you want to add a telnet server to ttylinux, your kernel will need to have
+<b>Unix98 pseudo terminal</b> support and support for the <b>devpts</b> file
+system.
+
+<p>
+
+<h2><a name="SECTION00032000000000000000">
+<span class="arabic">2</span>.<span class="arabic">2</span> File Downloads</a>
+</h2>
+
+<p>
+The main ttylinux web site is accessed at <tt>http://ttylinux.org/</tt>. The web
+site is hosted at <tt>http://www.minimalinux.org/</tt>, which is very much
+appreciated.
+
+<p>
+The ttylinux web site has a Download page that has several files available for
+downloading.
+
+<p>
+<b>Bootable CD-ROM Images</b>
+
+<p>
+There should be several ttylinux bootable CD-ROM ISO images available, at least
+one each for i486 PC and x86_64 PC. The CD-ROM ISO images are each an El Torito
+bootable CD-ROM ISO 9660 file system with the Joliet and Rock Ridge extensions.
+El Torito enables CD-ROM to be bootable on PC. The Joliet and Rock Ridge
+extensions adds longer file names to the ISO 9660 file system capabilities.
+
+<p>
+<b>Source Distribution</b>
+
+<p>
+The ttylinux source distribution, which includes the source code packages, is
+available; it has a file <tt>How_To_Build_ttylinux.txt</tt> that describes the
+build process. When available at the ttylinux web site, the Developer Guide
+more fully describes building ttylinux.
+
+<p>
+<b>Binary Run-time Packages</b>
+
+<p>
+The packages that make up the entire latest i486 ttylinux CD-ROM run-time are
+available. The x86_64 packages also should be available. Packages for other CPU
+architectures may be available. These packages are available in the case any
+were removed from a ttylinux system and there is a desire or need to reinstall
+the removed packages. Packages are installed with <tt>pacman</tt>, the ttylinux
+package manager. Pacman is described in more detail in section <a href="#pacmanger">4.10</a>
+of this document.
+
+<p>
+<b>Previous Versions</b>
+
+<p>
+At least one previous ttylinux version should be available.
+
+<p>
+
+<h2><a name="SECTION00033000000000000000"></a>
+<a name="bootcd"></a>
+<br>
+<span class="arabic">2</span>.<span class="arabic">3</span> Booting a CD-ROM Image
+</h2>
+
+<p>
+The 9.3 and 11.1 versions of ttylinux are intended to boot on an appropriate
+32-bit x86 or 64-bit x86_64 PC that can boot from a CD-ROM drive.
+
+<p>
+Download the CD-ROM ISO image file and burn it onto a blank CD-ROM disc as an
+ISO image. Then put the disc into the CD-ROM drive of an appropriate PC and
+boot the PC; ttylinux should start up automatically.
+
+<p>
+A computer's BIOS setup may not be set up to allow booting from CD-ROM; in that
+case you need to go into the BIOS setup screen(s) and make changes that allow
+the computer to boot from CD-ROM. If the computer has an old BIOS that is not
+able to boot from a CD-ROM device, there is software called <i>Smart Boot
+Manager</i> that may help. It can currently be found at:
+<tt>http://btmgr.sourceforge.net/about.html</tt>
+
+<p>
+Once ttylinux has booted, and you see the login prompt, login as user name
+"root", the administrator account, with password "password". There also is a
+non-administrator account "user", with password "password".
+
+<p>
+The CD-ROM can be used as a rescue system or simply for trying ttylinux. For
+installing or transferring ttylinux from the CD-ROM, or from the downloaded
+CD-ROM image file, to another disk device see section <a href="#installation">3</a>. See
+section <a href="#sysguide">4</a> of this user guide for pointers about what you can do
+with a ttylinux system.
+
+<p>
+
+<h2><a name="SECTION00034000000000000000">
+<span class="arabic">2</span>.<span class="arabic">4</span> Setting Up a USB or Flash Drive</a>
+</h2>
+
+<p>
+ttylinux can be put onto a USB drive, also known as flash drive, USB memory
+stick, pen drive, travel drive, etc. This also applies to flash drives that are
+not on USB. For these you probably want to boot a RAM disk system from your USB
+or flash drive. See section <a href="#bootflash">3.3</a>, but you should also read the
+preceeding parts of section <a href="#installation">3</a>.
+
+<p>
+
+<h1><a name="SECTION00040000000000000000"></a>
+<a name="installation"></a>
+<br>
+<span class="arabic">3</span> Installing from CD-ROM
+</h1>
+
+<p>
+This section of the user guide describes the two types of ttylinux bootable
+installations and the methods for creating them from either the downloaded
+CD-ROM image file or a CD-ROM with the image burned onto it.
+
+<p>
+
+<h2><a name="SECTION00041000000000000000">
+<span class="arabic">3</span>.<span class="arabic">1</span> CD-ROM Image Overview</a>
+</h2>
+
+<p>
+The ttylinux CD-ROM image is the source used for installation; it is a CD-ROM
+ISO 9660 file system with the following directory structure:
+
+<p>
+<pre>
+|-- AUTHORS
+|-- COPYING
+|-- LABEL
+|-- boot/
+|   |-- System.map
+|   |-- filesys.gz
+|   |-- isolinux/
+|   |   |-- boot.msg
+|   |   |-- help_f2.msg
+|   |   |-- help_f3.msg
+|   |   |-- isolinux.cfg
+|   |   `-- isolinux.bin
+|   |-- vmlinux
+|   `-- vmlinuz
+|-- config/
+|   |-- kernel-&lt;linux kernel verison&gt;-&lt;CPU architecture&gt;.cfg
+|   |-- packages-&lt;ttylinux version&gt;-&lt;linux kernel version&gt;.txt
+|   |-- syslinux
+|   `-- ttylinux-setup
+`-- doc/
+    |-- ChangeLog-&lt;CPU architecture&gt;
+    |-- Flash_Disk_Howto.txt
+    |-- User_Guide.pdf
+    `-- User_Guide.tex
+</pre>
+
+<p>
+Several files are critical for installation, note their location in the CD-ROM
+image:
+<br><tt>CD-ROM/</tt><b>boot/filesys.gz</b> - ttylinux gzipped ext2 file system image
+<br><tt>CD-ROM/</tt><b>boot/vmlinuz</b> - gzipped ttylinux Linux kernel
+<br><tt>CD-ROM/</tt><b>config/ttylinux-setup</b> - user-maintained RAM disk startup
+
+<p>
+The ttylinux installation script automates the process of installing ttylinux;
+the scripts also copy the other documentation and information files to the new
+installed system.
+
+<p>
+For manual installation you can mount the CD-ROM or mount the CD-ROM image file
+via loop device for access to the critical files. The manual processes of
+installing ttylinux describes this in more detail.
+
+<p>
+
+<h2><a name="SECTION00042000000000000000">
+<span class="arabic">3</span>.<span class="arabic">2</span> RAM Disk or Persistent Storage Boot</a>
+</h2>
+
+<p>
+There are two basic types of ttylinux installation, resulting in two type of
+booted systems: a RAM disk or persistent storage.
+
+<p>
+A <b>Ram Disk</b> installation results in a system that puts the root file
+system into RAM when it boots, which is what the bootable CD-ROM does. If you
+want to put ttylinux onto a flash drive, pen drive, USB memory stick, travel
+drive, etc. then you very probably want this sort of installation. This is
+typical for flash drives, but not for spinning hard disks, for at least two
+reasons: 1) flash drives have been much slower than hard drives, so maintaining
+a live file system on a flash drive has been intolerably slow, and 2) these are
+removable drive which have been difficult to consistently mount as they move
+between interfaces and computers. With this booting scheme, the boot loader
+takes the root file system from the drive and gives it to the kernel which
+decompresses it and mounts it as a read/write root file system in a RAM disk in
+memory. Changes to files in the root file system are lost when the system shuts
+down; persistent changes must be stored elsewhere. However, ttylinux has
+specific support for persistent changes to its boot-time startup with a RAM
+disk system, this is described section <a href="#flashback">3.3.5</a>. The program
+<tt>/sbin/ttylinux-flash</tt> can be used to copy ttylinux from the CD-ROM to
+another drive and configure it to boot in this manner. The processes of putting
+ttylinux onto a drive for booting a RAM disk system and configuring its
+boot-time startup support is described in more detail in the next section
+<a href="#bootflash">3.3</a>.
+
+<p>
+A <b>Persistent Storage</b> installation results in a system that boots with the
+read/write root file system maintained directly on the spinning hard disk or
+solid state drive. If you have a spinning hard disk or one of the new fast
+solid state drives, and it is not removable, then you probably want this sort
+of installation. If you want to install onto removable media and will move the
+media to different slots or computers, then you do not want this kind of
+installation. The program <tt>/sbin/ttylinux-installer</tt> can be used to install
+ttylinux from the CD-ROM onto a spinning hard disk or solid state drive and
+configure it to boot in this manner. The processes of installing ttylinux onto
+a hard drive and booting a persistent storage root file system is described in
+more detail in section <a href="#bootfixed">3.4</a>.
+
+<p>
+
+<h2><a name="SECTION00043000000000000000"></a>
+<a name="bootflash"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">3</span> Transfer from CD-ROM - Make a RAM Disk Boot System
+</h2>
+
+<p>
+The section describes transferring a few files from the CD-ROM image to a drive,
+probably a flash drive, and configuring it to boot ttylinux into a RAM disk, as
+does the CD-ROM.
+
+<p>
+A Linux system, either ttylinux or some other Linux system, can be used to make
+a ttylinux bootable flash drive.
+
+<p>
+The ttylinux script <tt>/sbin/ttylinux-flash</tt> makes a bootable ttylinux on a
+flash drive, and it does this in such a way that the new flash drive ttylinux
+copy can then be used in place of a CD-ROM as the <i>source</i> for another
+ttylinux transfer, but only if you again use the ttylinux script.
+
+<p>
+
+<h3><a name="SECTION00043100000000000000">
+<span class="arabic">3</span>.<span class="arabic">3</span>.<span class="arabic">1</span> Source Directory</a>
+</h3>
+
+<p>
+The ttylinux CD-ROM is used as the source, or the ttylinux CD-ROM image file
+mounted with a loop device can be used. Even the kernel and file system image
+files removed from the ttylinux CD-ROM image can be used as the source if they
+are in a directory structure as found in the CD-ROM image.
+
+<p>
+<b>Using the ttylinux CD-ROM Disc</b>
+
+<p>
+For the following examples of mounting the CD-ROM disc, /mnt/cdrom references
+the mount point in your file system to which the CD-ROM disc mounts. If you are
+not using ttylinux then your actual mount point may be different; substitute
+accordingly. Have the ttylinux boot CD-ROM disc in the CD-ROM drive and mount
+it. You need to know which device in /dev to use; if you do not know which
+device to use then section <a href="#cdromdev">3.4.1</a> might help. The CD-ROM should be
+mounted as type iso9660 e.g., mounted by the following command.
+
+<p>
+<pre>
+	mount -t iso9660 /dev/&lt;partition&gt; /mnt/cdrom
+</pre>
+
+<p>
+<b>Using a ttylinux CD-ROM ISO Image File</b>
+
+<p>
+If you have a downloaded ttylinux CD-ROM image file, bootcd-i486-9.3.iso.gz,
+bootcd-i686-11.1.iso.gz or bootcd-x86_64-11.1.iso.gz, then you can mount it
+via loopback device with the following commands; substitue i686-11.1 or
+x86_64-11.1 for i486-9.3 where appropriate.
+
+<p>
+<pre>
+	mkdir -p mnt/cdrom
+	gunzip bootcd-i486-9.3.iso.gz
+	mount -t iso9660 -o loop bootcd-i486-9.3.iso mnt/cdrom
+</pre>
+
+<p>
+<b>Critical ttylinux CD-ROM Files</b>
+
+<p>
+Of the following three files, you must have access to the first two; the third
+one is very usefull, but not critical. In the following, "<tt>CD-ROM/</tt>" is
+meant to be wherever you mounted the CD-ROM disc or CD-ROM image file.
+
+<p>
+<tt>CD-ROM/</tt><b>boot/filesys.gz</b> - ttylinux gzipped ext2 file system image
+<br><tt>CD-ROM/</tt><b>boot/vmlinuz</b> - gzipped ttylinux Linux kernel
+<br><tt>CD-ROM/</tt><b>config/ttylinux-setup</b> - user-maintained RAM disk startup
+
+<p>
+
+<h3><a name="SECTION00043200000000000000">
+<span class="arabic">3</span>.<span class="arabic">3</span>.<span class="arabic">2</span> Target Directory</a>
+</h3>
+
+<p>
+The target directory is the directory where ttylinux will be put; it must be
+the top-level, root directory on the disk partition being used. You need to
+know, or find out, the device name for the disk partition onto which you want
+to transfer ttylinux. If you are not sure what a disk partition is you can read
+a little more description of ttylinux target partitions in section
+<a href="#targetpartition">3.4.2</a>, but do not continue until you understand enough about
+disk devices and partitions to understand the rest of this section.
+
+<p>
+Due to the combined space requirements of the 8 MB ttylinux file system and the
+2.5 to 3.5 MB ttylinux Linux kernel, and considering some margin, the minimum
+partition size onto which you can install ttylinux and have it work is at least
+12 MB.
+
+<p>
+This rest of this section describes manually mounting a disk partition that has
+the directory to transfer ttylinux onto. If your target directory is already
+mounted, or automatically mounts, and you will use the ttylinux script to
+transfer ttylinux, then <b>delete everything in the target directory</b> or the
+script will not transfer ttylinux onto it.
+
+<p>
+In order to manually mount a disk you need to know the disk device node e.g.
+/dev/sdc and its mountable partition you want to use e.g. /dev/sdc1. Read the
+previous sentence again, note the distinction between the disk and partition
+devices.
+
+<p>
+A USB drive partition probably should be mounted with the following command.
+For the following example of mounting the drive, /mnt/flash references the
+mount point in your file system to which the drive mounts. If you are not using
+ttylinux then your actual mount point may be different; substitute accordingly.
+If you are mounting a Linux file system then change to the appropriate file
+system type in the following command.
+
+<p>
+<pre>
+	mount -t vfat /dev/&lt;partition&gt; /mnt/flash
+</pre>
+
+<p>
+The device partition in the above example is the device node of the mountable
+partition on the disk that you want to use e.g. sdc1, in which case it
+represents /dev/sdc1.
+
+<p>
+If you will use the ttylinux script to transfer ttylinux, then <b>delete
+everything in the target directory</b> or the script will not transfer ttylinux
+onto it.
+
+<p>
+
+<h3><a name="SECTION00043300000000000000">
+<span class="arabic">3</span>.<span class="arabic">3</span>.<span class="arabic">3</span> Running the Transfer Script</a>
+</h3>
+
+<p>
+The ttylinux shell script, <tt>/sbin/ttylinux-flash</tt> automates the process of
+copying the ttylinux system from the source directory into the target directory
+and making the target drive bootable. This transfer typically is from CD-ROM
+disc to flash drive; the CD-ROM disc should be mounted with option <tt>-t
+iso9660</tt> to specify the correct file system type, and USB drives are usually
+FAT32 and those should be mounted with option <tt>-t vfat</tt> to specify the
+correct file system type.
+
+<p>
+The script is invoked with a command line option telling it which boot loader
+to use, lilo or syslinux. The following is the help output from the
+<tt>ttylinux-flash</tt> script, it describes how to invoke the script.
+
+<p>
+<pre>
+ttylinux-flash
+(C) 2008-2010 Douglas Jerome &lt;douglas@ttylinux.org&gt;
+
+Usage: ttylinux-flash --lilo     &lt;source path&gt; &lt;flash path&gt; &lt;flash dev&gt;
+       ttylinux-flash --syslinux &lt;source path&gt; &lt;flash path&gt; &lt;flash dev&gt;
+
+Parameters:
+
+     -l | --lilo ....... Use lilo method to make bootable flash disk.
+     -s | --syslinux ... Use syslinux method to make bootable flash disk.
+
+     &lt;source path&gt; is the mounted ttylinux CD-ROM directory, or any equivalent
+                   USB or hard drive directory of the ttylinux CD-ROM layout
+                   and contents.
+
+     &lt;flash path&gt;  is a rooted path to the flash disk root file system to be
+                   loaded from the source path.  For the syslinux method this
+                   must be a Windows FAT file system, but for the lilo method
+                   this can be either an EXT2 or FAT file system.
+
+     &lt;flash dev&gt;   is the /dev/* that is the whole disk block device node,
+                   such as /dev/sdc, NOT a partition block device node
+                   like /dev/sdc1.
+</pre>
+
+<p>
+The transfer script checks if the source CR-ROM device contains a ttylinux
+CD-ROM; if the CD-ROM is found then a summary of what is to be transfered onto
+which device is printed and you are given a choice of continuing or aborting.
+Enter "yes" to continue the transfer.
+
+<p>
+The transfer script copies the ttylinux files onto drive and then installs the
+bootloader.
+
+<p>
+After the installer is finished you can remove the CD-ROM disc from your
+computer and reboot.
+
+<p>
+
+<h3><a name="SECTION00043400000000000000">
+<span class="arabic">3</span>.<span class="arabic">3</span>.<span class="arabic">4</span> Manual Transfer</a>
+</h3>
+
+<p>
+The manual process is described in appendix <a href="#flashdiskhowto">B</a> of this
+document. It also is a text file, <tt>Flash_Disk_Howto.txt</tt>, in the doc/
+directory on the ttylinux CD-ROM disc.
+
+<p>
+
+<h3><a name="SECTION00043500000000000000"></a>
+<a name="flashback"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">3</span>.<span class="arabic">5</span> Configuring the System
+</h3>
+
+<p>
+This transfered ttylinux system is a RAM disk system. Its file system is a
+gzipped image on the boot drive; its directories and files are very
+inaccessible. When the system is running, changes made to files are not
+retained for the next boot. Customizing or configuring this system to your
+needs takes some specific support.
+
+<p>
+A ttylinux system properly transfered, such as by using the
+<tt>/sbin/ttylinux-flash</tt> script, has a special boot-time startup feature:
+when ttylinux boots it attempts to mount the USB/flash drive that is boots from
+and run a script on that drive. Since the script is in a boot drive directory,
+and not burried away in a compressed file system, it can be changed and
+maintained by you. You can change this script to perform ttylinux configuration
+for ttylinux to do when it boots.
+
+<p>
+The feature of mounting the booted drive and running a startup script on that
+drive provides the user with a persistent boot-time startup configuration that
+is retained from one boot to the next. This user-maintainable startup script on
+the boot drive is in the <tt>config/ttylinux</tt> directory; a default version of
+this script is put onto the boot drive when the <tt>/sbin/ttylinux-flash</tt>
+script is run. This startup script is a very convenient place to configure your
+particular network interface upon ttylinux startup.
+
+<p>
+
+<h2><a name="SECTION00044000000000000000"></a>
+<a name="bootfixed"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">4</span> Install from CD-ROM - Make a Persistent Storage Boot System
+</h2>
+
+<p>
+<b>NOTE</b> Your computer needs at least 32 MB of RAM to run the
+<tt>ttylinux-installer</tt> script.
+
+<p>
+The section describes installing ttylinux from the CD-ROM image to a drive
+partition, probably on a spinning hard disk, and configuring it to boot
+ttylinux with the root file system residing on the boot drive, not in RAM.
+
+<p>
+A Linux system, either ttylinux or some other Linux system, can be used to
+install ttylinux.
+
+<p>
+WARNING: Running the installer can easily destroy all operating systems, and
+anything else, currently present on the target machine. Proceed with caution
+and backup all <i>important</i> data before installing ttylinux. Really.
+
+<p>
+To install ttylinux onto disk from the bootable CD-ROM, you first need to burn
+the ttylinux CD-ROM ISO image onto a blank CD-ROM disc and, if using ttylinux
+to perform the installation, boot into it as described in the previous section
+<a href="#bootcd">2.3</a>.
+
+<p>
+Once logged into ttylinux as root, you can start the installation. You need to
+know three things to run the installer: 1) what your CD-ROM device is, 2) which
+drive partition you want to install ttylinux, and 3) where you want to put the
+boot loader.
+
+<p>
+If you don't know the answers to those three questions after reading the
+following instructions, the safe bet would be <b>not</b> to proceed with
+installation; the ttylinux installer is not yet automated or user-friendly
+enough for you.
+
+<p>
+
+<h3><a name="SECTION00044100000000000000"></a>
+<a name="cdromdev"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">1</span> Source CD-ROM Device
+</h3>
+
+<p>
+The correct CD-ROM device name depends on whether the drive is an IDE or SATA
+device. If your system uses IDE, the following device names are possible:
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Device Name</td>
+<td align="LEFT">Description</td>
+</tr>
+<tr><td align="LEFT">/dev/hda</td>
+<td align="LEFT">Master Device on First IDE Controller</td>
+</tr>
+<tr><td align="LEFT">/dev/hdb</td>
+<td align="LEFT">Slave Device on First IDE Controller</td>
+</tr>
+<tr><td align="LEFT">/dev/hdc</td>
+<td align="LEFT">Master Device on Second IDE Controller</td>
+</tr>
+<tr><td align="LEFT">/dev/hdd</td>
+<td align="LEFT">Slave Device on Second IDE Controller</td>
+</tr>
+</table>
+</div>
+
+<p>
+Among the above, /dev/hda is not likely to be your CD-ROM device unless you are
+using a modern laptop. A more likely possibility is /dev/hdc. /dev/hda normally
+is the device name of your hard disk, but a modern computer will use SATA for
+the hard drive and many of those have IDE CD-ROM drive.
+
+<p>
+If your system uses SATA (Serial ATA), use this table:
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Device Name</td>
+<td align="LEFT">Description</td>
+</tr>
+<tr><td align="LEFT">/dev/scd0</td>
+<td align="LEFT">First SATA CD-ROM Device</td>
+</tr>
+<tr><td align="LEFT">/dev/scd1</td>
+<td align="LEFT">Second SATA CD-ROM Device</td>
+</tr>
+<tr><td align="LEFT">/dev/scd2</td>
+<td align="LEFT">Third SATA CD-ROM Device</td>
+</tr>
+<tr><td align="LEFT">/dev/scd3</td>
+<td align="LEFT">Fourth SATA CD-ROM Device</td>
+</tr>
+</table>
+</div>
+
+<p>
+Usually the SATA CD-ROM device will be /dev/scd0.
+
+<p>
+
+<h3><a name="SECTION00044200000000000000"></a>
+<a name="targetpartition"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">2</span> Target Partition Device
+</h3>
+
+<p>
+You need to know, or find out, the device name for the disk partition on which
+you want to install ttylinux. The device names for disk partitions are formed
+by appending a number to the device name of the corresponding disk. For
+example, if your disk device is /dev/hda, the device /dev/hda3 is the third
+partition on that disk. Numbers 1-4 are the primary partitions, extended
+partitions start at 5.
+
+<p>
+ATTENTION: If you plan on installing onto a USB drive, or some other frequently
+moved disk device, then do not install ttylinux with the instructions here; use
+the instructions in section <a href="#bootflash">3.3</a>. The disk and partition devices
+used by this installation process would likely be different between different
+computers, so this installation may not correctly boot when booted on a
+computer other than the computer on which the installation is performed.
+
+<p>
+Due to the combined space requirements of the 8 MB ttylinux file system and the
+3 MB ttylinux kernel, and considering some margin, the minimum partition size
+onto which you can install ttylinux and have it work is about 12 MB.
+
+<p>
+IDE disks use the same device names as given for IDE CD-ROM devices above. For
+SATA, the names are as follows:
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Device Name</td>
+<td align="LEFT">Description</td>
+</tr>
+<tr><td align="LEFT">/dev/sda</td>
+<td align="LEFT">First SATA Disk Device</td>
+</tr>
+<tr><td align="LEFT">/dev/sdb</td>
+<td align="LEFT">Second SATA Disk Device</td>
+</tr>
+<tr><td align="LEFT">/dev/sdc</td>
+<td align="LEFT">Third SATA Disk Device</td>
+</tr>
+<tr><td align="LEFT">/dev/sdd</td>
+<td align="LEFT">Fourth SATA Disk Device</td>
+</tr>
+</table>
+</div>
+
+<p>
+Note that if you want to create a dual-boot setup with Windows and ttylinux on
+the same disk, a topic not covered here, you can't use the first partition
+/dev/hda1 or /dev/sda1 as your ttylinux target partition, because that is where
+Windows needs to be installed to work.
+
+<p>
+Here are some examples of possible device names for your target partition:
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Device Name</td>
+<td align="LEFT">Description</td>
+</tr>
+<tr><td align="LEFT">/dev/hda1</td>
+<td align="LEFT">First Primary Partition on Primary IDE Master</td>
+</tr>
+<tr><td align="LEFT">/dev/hdb5</td>
+<td align="LEFT">First Extended Partition on Primary IDE Slave</td>
+</tr>
+<tr><td align="LEFT">/dev/sda2</td>
+<td align="LEFT">Second Primary Partition on First SATA Disk</td>
+</tr>
+<tr><td align="LEFT">/dev/sdc6</td>
+<td align="LEFT">Second Extended Partition on Third SATA Disk</td>
+</tr>
+</table>
+</div>
+
+<p>
+Note that depending on the BIOS, booting might be possible only from the first
+two disks installed in the system.
+
+<p>
+Also, you can look at the directory listing of <tt>/sys/block</tt> to see which
+block devices the kernel has detected, as disk drives are block devices.
+
+<p>
+<b>Drive Partitioning, if Needed</b>
+
+<p>
+What to do if your target disk is not partitioned yet? Linux systems, including
+ttylinux, have the <tt>fdisk</tt> program that can be used to partition disks. For
+example, to partition a disk connected as master to the first IDE controller,
+use:
+
+<p>
+<pre>
+	fdisk /dev/hda
+</pre>
+
+<p>
+The user interface of <tt>fdisk</tt> is somewhat primitive, <i>so be careful</i>.
+If you haven't used it before, a good idea would be to search the Internet for
+instructions. The basic commands you may need are "d" to delete a partition,
+"n" to create a new partition, "p" to print the current partition table, and
+"w" to write the edited partition table to disk. You can also use "q" to exit
+<tt>fdisk</tt> without saving your changes.
+
+<p>
+
+<h3><a name="SECTION00044300000000000000">
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">3</span> Boot Loader Location</a>
+</h3>
+
+<p>
+The LILO boot loader is installed in one of two places: either the Master Boot
+Record (MBR) of the <i>disk device</i> or the boot sector of the <i>partition
+device</i> in which ttylinux is being installed.
+
+<p>
+With LILO installed in the MBR of the first disk, it will completely take over
+the entire boot process of the computer. If there are other operating systems
+installed on the computer they need to be specified in the LILO configuration
+file, <tt>/etc/lilo.conf</tt>, in order to boot them.
+
+<p>
+With LILO installed in the boot sector of the target partition or in the MBR of
+a disk other than the first one in your computer, the bootloader installed in
+the MBR of the first disk needs to be configured to boot the ttylinux target
+partition.
+
+<p>
+
+<h3><a name="SECTION00044400000000000000">
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">4</span> Running the Installer</a>
+</h3>
+
+<p>
+Once you have decided on target device and boot loader location, you can run
+the installer. The script is called <tt>ttylinux-installer</tt>. The following is
+the help output from the <tt>ttylinux-installer</tt> script, it describes how to
+invoke the script. The square brackets indicate an optional parameter, the
+<i>partition</i> device is used for the installation target device.
+
+<p>
+<pre>
+ttylinux-installer
+(C) 2008-2010 Douglas Jerome &lt;douglas@ttylinux.org&gt;
+(C) 2006      Pascal Schmidt &lt;ttylinux@ewetel.net&gt;
+
+Usage: ttylinux-installer [-m | --mbr] &lt;source device&gt; &lt;target device&gt;
+
+Parameters:
+
+     -m | --mbr ... Put the lilo boot loader onto disk device containing the
+                    &lt;target device&gt; disk partition device.
+
+     &lt;source device&gt; is the CD-ROM device that has the ttylinux CD-ROM.
+
+     &lt;target device&gt; is the disk partition device onto which ttylinux is
+                     installed; it needs to be a disk partition device, not the
+                     whole disk device.  An ext2 file system is created on this
+                     partition device.
+
+This program creates an ext2 file system on the disk partition device &lt;target
+device&gt;, installs ttylinux from the CD-ROM &lt;source device&gt; into the new file
+system on &lt;target device&gt;, and then puts a lilo boot loader onto the target
+disk.  The lilo boot loader is put onto the disk partition &lt;target device&gt;
+unless the -m or --mbr option is present, in which case the lilo boot loader is
+put onto the disk device containing the &lt;target device&gt; disk partition device.
+</pre>
+
+<p>
+For example, to install from the CD-ROM device /dev/hdc into partition device
+/dev/hda2 and placing LILO on the MBR, /dev/hda disk device, you would use:
+
+<p>
+<pre>
+	ttylinux-installer -m /dev/hdc /dev/hda2
+</pre>
+
+<p>
+Another example, installing from the second SATA CD-ROM device /dev/scd1 into
+the third partition device of the second SATA disk and placing LILO on the boot
+sector <i>of the target partition</i>:
+
+<p>
+<pre>
+	ttylinux-installer /dev/scd1 /dev/sdb3
+</pre>
+
+<p>
+The installer checks if the source CR-ROM device contains a ttylinux CD-ROM
+disc; if the CD-ROM disc is found then a summary of what is to be installed on
+which device is printed and you are given a choice of continuing or aborting.
+Enter "yes" to continue the installation.
+
+<p>
+The installer creates an ext2 file system on the target partition then copies
+the ttylinux distribution files onto the new file system, and then installs the
+LILO bootloader.
+
+<p>
+After the installer is finished you can remove the CD-ROM disc from your
+computer and reboot.
+
+<p>
+
+<h3><a name="SECTION00044500000000000000">
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">5</span> Manual Installation - Setup and Installation</a>
+</h3>
+
+<p>
+This description uses <tt>LILO</tt> for boot loading; other boot loaders such as
+<tt>grub</tt> and maybe <tt>loadlin</tt> and <tt>syslinux</tt> will also work.
+
+<p>
+There are two files to take from the ttylinux CD-ROM image, either by burning
+the image to a blank CD-ROM disc and mounting it, or mounting the CR-ROM image
+via loop device. In the following commands, the ttylinux version 9.3 CD-ROM
+image file is named <tt>bootcd-i486-9.3.iso.gz</tt>; decompress it and mount it
+via loop device with the following commands, substituting your actual CPU
+<tt>x86_64</tt> or <tt>i686</tt> and ttylinux version number <tt>11.1</tt>, if needed.
+
+<p>
+<pre>
+	mkdir -p mnt/ttylinux
+	gunzip bootcd-i486-9.3.iso.gz
+	mount -t iso9660 -o loop bootcd-i486-9.3.iso mnt/ttylinux
+</pre>
+
+<p>
+The two files needed from the CD-ROM are the ttylinux root file system,
+<tt>boot/filesys.gz</tt>, and the Linux kernel, <tt>boot/vmlinuz</tt>. You
+can, of course, use a different Linux kernel, following the ttylinux custom
+kernel requirements described in section <a href="#customkernel">2.1.1</a>.
+
+<p>
+There are two ways to install ttylinux for booting, one is to have ttylinux
+boot with the root file system in RAM disk, the other is to have ttylinux boot
+with the root file system directly on the hard drive.
+
+<p>
+<b>Install a ttylinux to Boot Using RAM Disk</b>
+
+<p>
+Copy the ttylinux file system <tt>filesys.gz</tt> image and the desired Linux
+kernel into your boot files directory; probably, this directory is <tt>/boot</tt>.
+After copying the two files, unmount the loop device with the following command.
+
+<p>
+<pre>
+	umount -d mnt/ttylinux
+</pre>
+
+<p>
+These two files, the kernel and the file system image, can have names other
+than the file names from the ttylinux CD-ROM. For this example the file names
+are changed from the names on the CD-ROM: the compressed ttylinux file system
+image file is called <tt>ttylinux-filesys.gz</tt>, the Linux kernel is called
+<tt>ttylinux-vmlinuz</tt> and the boot dirctory is <tt>/boot</tt>. Add the following
+section to <tt>/etc/lilo.conf</tt>:
+
+<p>
+<pre>
+image = /boot/ttylinux-vmlinuz
+	label  = ttylinux
+	initrd = /boot/ttylinux-filesys.gz
+	root   = /dev/ram0
+	read-only
+</pre>
+
+<p>
+Run the <tt>LILO</tt> boot loader installer by typing <tt>/sbin/lilo</tt>. The next
+boot will have the option of selecting <tt>ttylinux</tt> at the <tt>LILO</tt> boot
+prompt.
+
+<p>
+<b>Install a ttylinux to Boot with File System on a Hard Drive</b>
+
+<p>
+A hard drive partition, or a flash drive partition, of at least 8 MB is needed
+to install ttylinux. For this example ttylinux is being installed on drive
+partition device /dev/hda8 and the kernel and file system files are available
+via the loop device instructions above. A loop device also is used to mount the
+ttylinux file system image file.
+
+<p>
+<pre>
+	cp mnt/ttylinux/boot/filesys.gz filesys.gz
+	gunzip filesys.gz
+	mkdir -p mnt/filesys
+	mkdir -p mnt/newroot
+	mount -t ext2 -o loop ./filesys mnt/filesys
+	mount -t ext2 /dev/hda8 mnt/newroot
+	cp -a mnt/filesys/* mnt/newroot
+	cp mnt/ttylinux/boot/vmlinuz mnt/newroot/boot/ttylinux-vmlinuz
+	umount -d mnt/ttylinux
+	umount -d mnt/filesys
+</pre>
+
+<p>
+The new ttylinux root file system is still mounted; it needs to be customized
+before booting. Configuration is described in the following section
+<a href="#configuration">3.4.6</a>; it includes a description of a <tt>LILO</tt> configuration
+for booting the new ttylinux installation. After configuration unmount
+mnt/newroot.
+
+<p>
+
+<h3><a name="SECTION00044600000000000000"></a>
+<a name="configuration"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">6</span> Manual Installation - System Configuration
+</h3>
+
+<p>
+This section covers the minimum configuration needed to run ttylinux. More
+system configuration can be done; see the system guide, section <a href="#sysguide">4</a>,
+below for information.
+
+<p>
+The configuration files and options described in this section are present in a
+ttylinux system installed from the bootable CD-ROM. Following the installation
+instructions above, the file system is in <tt>mnt/newroot</tt>, that is the
+example starting point for the following configuration descriptions.
+
+<p>
+<b>/etc/fstab</b>
+
+<p>
+<tt>/etc/fstab</tt> needs to have the correct device for the root directory, the
+manually installed ttylinux <tt>/etc/fstab</tt> still specifies a RAM disk device
+for the root directory. Change the RAM disk device, /dev/ram0, to be the disk
+partition device in which the ttylinux root file system was installed. In the
+above example /dev/hda8 was used, so for that example the root directory in
+<tt>/etc/fstab</tt> would be specified as:
+
+<p>
+<pre>
+/dev/hda8     /     ext2     defaults     0 0
+</pre>
+
+<p>
+<b>Boot Loader</b>
+
+<p>
+The boot loader needs to specify the ttylinux kernel and root file system
+device. Following the installation instructions above, the <tt>LILO</tt>
+configuration file <tt>/etc/lilo.conf</tt> would include the following. Note the
+<i>initrd</i> specifier is removed and the <i>root</i> specifier is changed to
+/dev/hda8.
+
+<p>
+<pre>
+image = /boot/ttylinux-vmlinuz
+	label = ttylinux
+	root  = /dev/hda8
+	read-only
+</pre>
+
+<p>
+<b>Keyboard Map</b>
+
+<p>
+To use the current keyboard map from the Linux computer being used to install
+ttylinux, use the following commands.
+
+<p>
+<pre>
+	rm mnt/newroot/etc/i18n/kmap
+	mnt/newroot/bin/dumpkmap &gt;mnt/newroot/etc/i18n/kmap
+</pre>
+
+<p>
+<b>Timezone</b>
+
+<p>
+The best way to set the ttylinux timezone is to use the boot parameters as
+described in section <a href="#bootparms">4.1</a>. This needs to be done only one time for
+an installed ttylinux system.
+
+<p>
+<b>Dial-up Network Information</b>
+
+<p>
+ttylinux 9.3 is does not <i>directly</i> support dial-up networking with PPP and
+has no support at all for ISDN. Previous versions of ttylinux did have PPP and
+ISDN support; their package structure is being re-organized and they may return
+in later 9.X version of ttylinux.
+
+<p>
+ttylinux 9.3 does have the PPP binaries: <tt>/usr/sbin/pppd</tt> and
+<tt>/usr/sbin/chat</tt>, but currently it is up to you to configure and use them.
+
+<p>
+<b>Unmount and Reboot</b>
+
+<p>
+Now unmount the newly installed partition.
+
+<p>
+<pre>
+	umount mnt/newroot
+</pre>
+
+<p>
+And reboot to run the new ttylinux system.
+
+<p>
+
+<h1><a name="SECTION00050000000000000000"></a>
+<a name="sysguide"></a>
+<br>
+<span class="arabic">4</span> System Guide
+</h1>
+
+<p>
+This section gives a short overview of the ttylinux system, its configuration
+and some of the installed programs.
+
+<p>
+
+<h2><a name="SECTION00051000000000000000"></a>
+<a name="bootparms"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">1</span> Boot Parameters
+</h2>
+
+<p>
+Boot parameters are typed as a command line in the boot loader, before the
+Linux kernel is loaded. You will see these options when you boot the ttylinux
+CD-ROM.
+
+<p>
+<pre>
+enet ..................... Startup networking for Ethernet interfaces found by
+                           the kernel. DHCP is used. Any started interface will
+                           be eth0, eth1, eth2 or eth3.
+
+nofsck ................... Do not run fsck on any file systems.
+
+nosshd ................... Do not start sshd or make ssh keys; recommended for
+                           any CPU slower than 1 Ghz. A script that makes the
+                           ssh keys will be left in the /root directory.
+
+host=&lt;name.domain.tld&gt; ... Set the hostname to &lt;name.domain.tld&gt;, which by
+                           this example is a Fully Qualified Domain Name. You
+                           can use a simple &lt;name&gt;.
+
+hwclock=(local|utc) ...... The hardware (CMOS) clock keeps local or UCT time.
+
+tz=&lt;timezone&gt; ............ Set timezone to &lt;timezone&gt; by setting the TZ
+                           environment variable. Example: tz=GMT-8  See the
+                           following URL for a complete description of TZ.
+         http://www.gnu.org/s/libc/manual/html_node/TZ-Variable.html#TZ-Variable
+</pre>
+
+<p>
+If you've installed ttylinux and are using lilo, or some other boot loader,
+ttylinux will still use these boot options even if the boot loader does not
+show them.
+
+<p>
+
+<h2><a name="SECTION00052000000000000000">
+<span class="arabic">4</span>.<span class="arabic">2</span> Basic Features</a>
+</h2>
+
+<p>
+Upon boot-up, ttylinux provides 6 text consoles for login. There are two
+initial accounts: <tt>root</tt>, the administrator account, with password
+<tt>password</tt>; <tt>user</tt>, a user account, with password <tt>password</tt>
+
+<p>
+The <tt>syslogd</tt> and <tt>klog</tt> daemons are running and logging kernel and
+system messages to the file <tt>/var/log/messages</tt>.
+
+<p>
+The available text editor is <tt>vi</tt>; invoke it by typing <tt>vi</tt>
+<tt>/path/to/filename</tt>. This version of <tt>vi</tt> is a minimal version provided
+by <tt>busybox</tt>. Documentation and help for using <tt>vi</tt> is available in
+many places on the web.
+
+<p>
+For manipulation of users, groups and passwords, the tools <tt>adduser</tt>,
+<tt>addgroup</tt>, <tt>deluser</tt>, <tt>delgroup</tt> and <tt>passwd</tt> are present.
+
+<p>
+If you have not changed the keyboard settings as outlined in the configuration
+section, section <a href="#configuration">3.4.6</a> above, ttylinux will use its default
+keyboard settings. The default keyboard mapping is for a US keyboard.
+
+<p>
+The <tt>inetd</tt> super-server and the <tt>dropbear</tt> SSH server are running by
+default. An FTP or TFTP server will be forked by <tt>inetd</tt> when receiving
+either a connect from an FTP or TFTP client, respectively.
+
+<p>
+ttylinux 9.3 has <b>no</b> <tt>telnet</tt> server or client; the <tt>dropbear</tt> SSH
+client is used to remotely log in to other hosts.
+
+<p>
+ttylinux includes a basic packet filtering firewall which is enabled by
+default. Section <a href="#firewaller">4.7</a> below describes the configuring the ttylinux
+firewall.
+
+<p>
+
+<h2><a name="SECTION00053000000000000000"></a>
+<a name="startup"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">3</span> Bootup, Shutdown and System Configuration
+</h2>
+
+<p>
+On system bootup, the init process runs the <tt>/etc/rc.d/rc.sysinit</tt> script
+to setup the system, such as setting the clock, system font, keyboard map and
+checking the file systems. <tt>rc.sysinit</tt> also runs the
+<tt>/etc/rc.d/rc.local</tt> script <i>and then</i> runs all the programs in the
+<tt>/etc/rc.d/rc.startup</tt> directory, all with the command line parameter
+<tt>start</tt>.
+
+<p>
+For ttylinux systems installed by the <tt>/sbin/ttylinux-flash</tt> script, the
+system startup script <tt>/etc/rc.d/rc.sysinit</tt> attempts to mount the drive
+that is boots from and run a script. This ttylinux system is a RAM disk system,
+changes made to files are not retained for the next boot because the file
+system is in RAM. The feature of mounting the booted drive and running a
+startup script provides the user with a persistent boot-time startup
+configuration that is retained from one boot to the next. This
+user-maintainable startup script on the boot drive is in the
+<tt>config/ttylinux</tt> directory; a default version of this script is put onto
+the drive when the url/sbin/ttylinux-flash script is run. This script is a
+very convenient place to configure your particular network interface for
+ttylinux startup.
+
+<p>
+On system shutdown, the script <tt>/etc/rc.d/rc.sysdone</tt> runs. This script
+runs all the programs in the <tt>/etc/rc.d/rc.shutdown</tt> directory <i>and
+then</i> runs the <tt>/etc/rc.d/rc.local</tt> script, all with the command line
+parameter <tt>stop</tt>.
+
+<p>
+All the programs in <tt>/etc/rc.d/rc.startup</tt> and <tt>/etc/rc.d/rc.shutdown</tt>
+are symbolic links that reference actual shell scripts or binary programs; they
+are run in the ASCII order of their symbolic link file names. These symbolic
+links are named with leading numbers to help control their ordering e.g.,
+<tt>10.network</tt> is the symbolic link the the network startup program. The
+actual programs are in <tt>/etc/rc.d/init.d</tt>. Removing a symbolic link
+disables the program from starting up. These programs typically are shell
+scripts; they are commonly called <i>initscripts</i>.
+
+<p>
+Initscripts can be interactively invoked. The following command runs the network
+script <tt>/etc/rc.d/init.d/syslog</tt> with the command line option <tt>stop</tt>.
+
+<p>
+<pre>
+	service syslog stop
+</pre>
+
+<p>
+All scripts use the command line options <tt>start</tt>, <tt>stop</tt>, <tt>reload</tt>,
+<tt>restart</tt> and <tt>status</tt>. They print a list of supported options if they
+are called with no option present.
+
+<p>
+The initscripts define the basic ttylinux bootup system configuration. The
+initscripts are configurable to an extent; thus the bootup configuration is
+configurable to an extent. The bootup system configuration is specified in
+ASCII text files in the <tt>/etc/sysconfig</tt> directory; this directory is
+intended to have only files that are read by the various initscripts. All files
+read by initscripts for configuration options should reside in
+<tt>/etc/sysconfig</tt>.
+
+<p>
+There are two files in <tt>/etc</tt> that describe your ttylinux build-time
+configurations. <tt>/etc/ttylinux-host</tt> is a text file that describes
+something about the host architecture that built your ttylinux distribution.
+<tt>/etc/ttylinux-target</tt> is a text file that describes some things about the
+architecture of your running ttylinux distribution.
+
+<p>
+
+<h2><a name="SECTION00054000000000000000">
+<span class="arabic">4</span>.<span class="arabic">4</span> Shell Environment</a>
+</h2>
+
+<p>
+The default shell used by ttylinux is GNU bash. The shell environment of
+aliases and variables is in <tt>/etc/profile</tt>; view this file after login to
+become familiar with the default shell environment.
+
+<p>
+Upon login, the <tt>PATH</tt> environmental variable has the following paths in
+the order listed.
+
+<p>
+<pre>
+	/bin
+	/usr/bin
+	/sbin
+	/usr/sbin
+</pre>
+
+<p>
+Put additional, or overriding, shell environment in scripts in the
+<tt>/etc/profile.d</tt> directory; do not change <tt>/etc/profile</tt> in order to
+avoid losing changes when updating ttylinux.
+
+<p>
+
+<h2><a name="SECTION00055000000000000000">
+<span class="arabic">4</span>.<span class="arabic">5</span> Using Dropbear for SSH</a>
+</h2>
+
+<p>
+SSH, or secure shell, is a protocol for remote login with an advantage over
+telnet being that it can use public key authentication instead of passwords.
+Another advantage over the telnet protocol is that plain text is not
+transfered; the data sent between the host connections is encrypted.
+
+<p>
+<tt>dropbear</tt> is a small SSH v2 server and client package. Keys are generated
+and the server is started on system bootup by default, unless either the
+ttylinux <tt>dropbear</tt> starup script detects the CPU is slower than 1 GHz or
+the <tt>nosshd</tt> boot options was specified.
+
+<p>
+<tt>dropbear</tt> allows password and public key authentication. Public key
+authentication can use DSS and RSA keys and works with keys generated by the
+popular OpenSSH package. Having a public key from OpenSSH in the file
+<tt>.ssh/authorized_keys</tt> should allow secure login from the machine that has
+the corresponding private key. The permissions on the <tt>.ssh</tt> directory must
+not include group or other write permission, otherwise <tt>dropbear</tt> will
+refuse public key authentication.
+
+<p>
+The SSH client program is called <tt>dbclient</tt>. It is different from the
+server in that it cannot use keys in OpenSSH format. You can use the
+<tt>dropbearconvert</tt> program to convert an OpenSSH format key for use by
+<tt>dbclient</tt> or you can use <tt>dropbearkey</tt> to create a new key.
+
+<p>
+To convert an OpenSSH key stored in <tt>&nbsp;/.ssh/id_rsa</tt>, do:
+
+<p>
+<pre>
+	dropbearconvert openssh dropbear \
+		~/.ssh/id_rsa ~/.ssh/id_rsa.db
+</pre>
+
+<p>
+The new key will be stored in <tt>&nbsp;/.ssh/id_rsa.db</tt>. You can use the <tt>-i</tt>
+switch to <tt>dbclient</tt> to make it use your new key for authentication. The
+public key part of the old OpenSSH key can be used as-is for pasting into your
+<tt>&nbsp;/.ssh/authorized_keys</tt> file. Conversion is only needed for the private
+key.
+
+<p>
+To create a new RSA key to store in <tt>&nbsp;/.ssh/id_rsa.db</tt>, you can use the
+following command:
+
+<p>
+<pre>
+	dropbearkey -t rsa -f ~/.ssh/id_rsa.db
+</pre>
+
+<p>
+The public key part of the new key will be printed to the screen. You can put
+it into the <tt>&nbsp;/.ssh/authorized_keys</tt> file on all machines where you want to
+be able to login using your new private key stored in <tt>&nbsp;/.ssh/id_rsa.db</tt>.
+You can create a DSS key instead of an RSA key by using <tt>-t</tt> <tt>dss</tt>
+instead of <tt>-t</tt> <tt>rsa</tt>. Should you lose the public key, you can always
+get it back by using the private key and the <tt>-y</tt> switch to
+<tt>dropbearkey</tt>:
+
+<p>
+<pre>
+	dropbearkey -y -f ~/.ssh/id_rsa.db
+</pre>
+
+<p>
+If you want to use <tt>scp</tt> to copy files from another machine, the standard
+<tt>scp</tt> program from OpenSSH is included with <tt>dropbear</tt> and ttylinux.
+
+<p>
+
+<h2><a name="SECTION00056000000000000000">
+<span class="arabic">4</span>.<span class="arabic">6</span> Using an Ethernet Network</a>
+</h2>
+
+<p>
+ttylinux is ready to use Ethernet networking. DHCP will be used when starting
+up the Ethernet network, unless configured otherwise.
+
+<p>
+The Ethernet network interface configuration is specified in the text file:
+<pre>
+	/etc/sysconfig/network-scripts/ifcfg-eth0
+</pre>
+
+<p>
+This file has specification in the form of "ITEM=value". Edit this file to set
+the proper Ethernet interface IP addresses, change the Ethernet DHCP usage and
+to enable Ethernet networking. To enable Ethernet networking, the line
+<tt>ENABLE=no</tt> must be changed to <tt>ENABLE=yes</tt>. To disable DHCP, the line
+<tt>DHCP=yes</tt> must be changed to <tt>DHCP=no</tt>.
+
+<p>
+After configuring the Ethernet network interface, restart the networking
+subsystem with the following command.
+
+<p>
+<pre>
+	service network restart
+</pre>
+
+<p>
+See the description of the <tt>/sbin/sysconfig</tt> script in section
+<a href="#sysconfig">4.11</a> for scripted help in setting up the Ethernet network interface
+configuration.
+
+<p>
+The Ethernet network interface, commonly referred to as eth0, can be started
+and stopped independently from the entire network subsystem with the following
+commands.
+
+<p>
+Startup eth0 with:
+<pre>
+	ifup eth0
+</pre>
+
+<p>
+Shutdown eth0 with:
+<pre>
+	ifdown eth0
+</pre>
+
+<p>
+
+<h2><a name="SECTION00057000000000000000"></a>
+<a name="firewaller"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">7</span> Using the Firewall
+</h2>
+
+<p>
+The ttylinux firewall script sets the firewall to drop all new network input
+except for the ports explicitly specified in the firewall configuration file
+<tt>/etc/firewall.conf</tt>. The default firewall configuration specified in
+<tt>/etc/firewall.conf</tt> allows connections for FTP, TFTP, SSH, HTTP and the
+unprivileged UDP ports 1024 through 65535. The <tt>/etc/firewall.conf</tt>
+firewall configuration file has a very simple syntax that includes comments;
+the default file contains comments explaining its syntax and should be easy to
+understand and update.
+
+<p>
+Outgoing traffic is not firewalled at all and there is no configuration file
+for controlling outgoing traffic.
+
+<p>
+
+<h2><a name="SECTION00058000000000000000">
+<span class="arabic">4</span>.<span class="arabic">8</span> Using NFS</a>
+</h2>
+
+<p>
+ttylinux can be an NFS client; NFS versions 2 and 3 are supported.
+
+<p>
+tylinux is prepared to automatically mount NFS entries you add to the
+<tt>/etc/fstab</tt> file.
+
+<p>
+Example manual commands to mount a NFS directory:
+<pre>
+	mount -t nfs -o nolock,rw,vers=2 &lt;nfs server&gt;:&lt;exported dir&gt; /mnt/nfs
+	mount -t nfs -o nolock,rw,vers=3 &lt;nfs server&gt;:&lt;exported dir&gt; /mnt/nfs
+</pre>
+
+<p>
+
+<h2><a name="SECTION00059000000000000000">
+<span class="arabic">4</span>.<span class="arabic">9</span> Using Dialup</a>
+</h2>
+
+<p>
+ttylinux 9.3 is does not <i>directly</i> support dial-up networking with PPP and
+has no support at all for ISDN. Previous versions of ttylinux did have PPP and
+ISDN support; their package structure is being re-organized and they may return
+in later 9.X version of ttylinux.
+
+<p>
+ttylinux 9.3 does have the PPP binaries: <tt>/usr/sbin/pppd</tt> and
+<tt>/usr/sbin/chat</tt>, but currently it is up to you to configure and use them.
+
+<p>
+
+<h2><a name="SECTION000510000000000000000"></a>
+<a name="pacmanger"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">10</span> Package Management
+</h2>
+
+<p>
+Package management is handled by <tt>pacman</tt>; it is invoked from the shell
+by typing its name, <tt>pacman</tt>. Use <tt>pacman</tt> to install and remove
+packages, and to query the local database of installed packages and files. When
+the network is up <tt>pacman</tt> can query, download and install packages from
+appropriate repositories. <tt>http://ttylinux.net/</tt> currently is the only
+known ttylinux package repository. <tt>pacman</tt> also can make ttylinux
+packages, which may be handy as <tt>pacman</tt> is a bash script that can run on
+any Linux system.
+
+<p>
+ttylinux packages are <tt>tar</tt> archives compressed with <tt>bzip2</tt>. All the
+packages that normally come with the ttylinux distribution are available on the
+download page at the ttylinux web site; this is for reinstalling any packages
+that may have been removed from a ttylinux system. These packages are
+automatically accessible to <tt>pacman</tt> as packages from the
+<tt>ttylinux.net</tt> repository.
+
+<p>
+A list of hostnames to be used as ttylinux repositories may be kept in file
+<tt>/etc/ttylinux-repo</tt>; however this file does not need to exist. A package
+repository hostname can be given to any pacman command that accesses a ttylinux
+package repository, and <tt>ttylinux.net</tt> is allways the default if no package
+repository is given. If <tt>/etc/ttylinux-repo</tt> exists and has hostnames in
+it, <tt>ttylinux.net</tt> will be search first if no package repository is given
+on the pacman command line. You are not likely to use the
+<tt>/etc/ttylinux-repo</tt> file as <tt>http://ttylinux.net/</tt> currently is the
+only known ttylinux package repository.
+
+<p>
+<tt>pacman</tt> uses directory <tt>/usr/share/ttylinux</tt> as a database location.
+In this directory, ttylinux has one file per installed package; each file
+lists of all the file pathnames that belong that package. <tt>pacman</tt> makes
+and removes these package database files as needed. Also in the
+<tt>/usr/share/ttylinux</tt> directory will be similar repository cache files, one
+each for each ttylinux repository that <tt>pacman</tt> uses.
+
+<p>
+<b>Pacman Usage</b>
+<br>
+Some of the information from "pacman -help":
+<pre>
+Usage: pacman [option ...] operation name [name ...]
+
+Options:
+  --repo=&lt;name&gt;  refer to a particular external repository
+  --vers=&lt;num&gt;   download for ttylinux version V&lt;num&gt;
+  -v|--verbose   verbose operation
+
+Operations:
+  -h|--help          display this option summary
+  -d|--download      download package files
+  -e|--erase         remove packages
+  -i|--install       install package files
+  -m|--make          make a package
+  -qa|--query-all    list all installed packages
+  -qf|--query-file   show package that has file
+  -ql|--query-list   list files from named package
+  -qr|--query-repo   list packages in external repositiory
+</pre>
+
+<p>
+The <tt>pacman</tt> command line above shows a specific order for <i>options</i>,
+<i>operations</i> and <i>names</i>; however, they actually can be arraged in any
+order.
+
+<p>
+<b>Options</b>
+<br>
+Options can be repeated. If multiple conflicting options are given, the last
+one is used and the others are silently ignored. Each option applies only to
+some operations.
+
+<p>
+<b>Operations</b>
+<br>
+One operation must be supplied, and only one operation is allowed; all other
+uses of <tt>pacman</tt> display a help summary.
+
+<p>
+<b>Package Names</b>
+<br>
+There are two kinds of package names used with <tt>pacman</tt>.
+
+<p>
+Package <i>download</i>, <i>installation</i>, <i>make</i> and
+<i>query repo</i> operations refer to actual binary package file names.
+These files are <tt>tar</tt> archives compressed with <tt>bzip2</tt>.
+
+<p>
+Package <i>erase</i>, <i>query all</i>, <i>query file</i> and <i>query list</i>
+operations refer to package names without the CPU architecture and <tt>.tbz</tt>
+suffix. This shorter name conceptually refers to the package as its files are
+installed in various directories; it is not a name of a literal package file.
+With the <i>erase</i> and <i>query list</i> operations the name is given on the
+<tt>pacman</tt> command line. With the <i>query all</i> and <i>query file</i>
+operations the name is listed as output from <tt>pacman</tt>.
+
+<p>
+
+<h3><a name="SECTION000510100000000000000">
+<span class="arabic">4</span>.<span class="arabic">10</span>.<span class="arabic">1</span> Using pacman with ttylinux</a>
+</h3>
+
+<p>
+<b>Package Download</b>
+
+<p>
+Examples
+<pre>
+	pacman --download bash-3.2.48-x86_64.tbz lilo-22.8.src-x86_86.tbz
+	pacman -d bash-3.2.48-x86_64.tbz --repo=ttylinux.org
+	pacman -d bash-3.2.48-x86_64.tbz lilo-22.8.src-x86_86.tbz --vers=9.1
+	pacman --repo=palooka.net --download --vers=9.1 bash-3.2.48-x86_64.tbz
+</pre>
+
+<p>
+Use the <tt>-d</tt> or <tt>-download</tt> option to download a package from a
+repository via the network. The package name given to the command is the actual
+name of the package file. Multiple package names can be used to download
+multiple packages.
+
+<p>
+If no repository is given with the <tt>-repo=</tt> option, then all known
+repositories are searched. If the <tt>-repo=</tt> option is used, then only the
+given repository is search. The first package found matching the given package
+name is downloaded if there is a ttylinux version match, and then the download
+command stops; there is no further package search after a download attempt.
+
+<p>
+The version of the running ttylinux from which the download command is given
+must match the ttylinux version for a matching package name, otherwise the
+package is skipped and the download command continues searching the repository.
+Matching package names are displayed with their ttylinux version.
+
+<p>
+The <tt>-vers=</tt> option is used to override the running ttylinux version. For
+example, with this option you can download a package generated for ttylinux-9.1
+while running ttylinux-9.3, which in many cases is a valid option; furthermore,
+this option must be used with pacman when running pacman from a non-ttylinux
+host. See section <a href="#foreignpacman">4.10.2</a> for using pacman on a non-ttylinux host.
+
+<p>
+<b>Package Erase</b>
+
+<p>
+Examples
+<pre>
+	pacman --erase e2fsprogs-1.41.3
+	pacman -e e2fsprogs-1.41.3 bash-3.2.48
+</pre>
+
+<p>
+Use the <tt>-e</tt> or <tt>-erase</tt> option to remove an installed package's files
+and remove the package database file. The <i>name</i> is the name of the package
+as shown by the pacman query operations; this is not the name of the actual
+binary package file.  Multiple package names can be used to remove multiple
+packages.
+
+<p>
+<tt>pacman</tt> will show the package name ask to continue to remove the given
+package, and it will always list all the removed files.
+
+<p>
+Use the <tt>-v</tt> or <tt>-verbose</tt> option to get verbose output during package
+removal.
+
+<p>
+<b>Package Install</b>
+
+<p>
+Examples
+<pre>
+	pacman -i packages/bash-3.2.48-i486.tbz
+	pacman -i bash-3.2.48-i486.tbz e2fsprogs-1.41.3-i486.tbz
+	pacman --install --repo=ttylinux.net bash-3.2.48-i486.tbz
+	pacman --repo=ttylinux.net --install --vers=9.1 bash-3.2.48-i486.tbz
+</pre>
+
+<p>
+Use the <tt>-i</tt> or <tt>-install</tt> option to install a package by giving the
+package file name. The package name can be a pathname; the actual package file
+must be as named in the pacman command unless the <tt>-repo=</tt> option is used.
+Multiple package names can be used to install multiple packages.
+
+<p>
+To install from a repository use the <tt>-repo=</tt> option to give the hostname
+of the ttylinux package repository. Matching package names are displayed with
+their ttylinux version, but if the package's ttylinux version does not match
+the running ttylinux then the package is not installed. For the package
+installation command, the <tt>-vers=</tt> option is used only with the
+<tt>-repo=</tt> option to override the running ttylinux version.  For example,
+with this option you can install a package generated for ttylinux-9.1 while
+running ttylinux-9.3, which in many cases is a valid option.
+
+<p>
+<b>Package Make</b>
+
+<p>
+Examples
+<pre>
+	pacman -m dropbear-0.52-i486.tbz
+	pacman -make bash-3.2.48-i486.tbz e2fsprogs-1.41.3-i486.tbz
+</pre>
+
+<p>
+Use the <tt>-m</tt> or <tt>-make</tt> option to make ttylinux packages. This is a
+very difficult command to use. This command can be used on ttylinux but it is
+intended to be used on a non-ttylinux host to assemble ttylinux packages.
+
+<p>
+This command looks for a package database file. The database file name is the
+package name without the CPU architecture and <tt>.tbz</tt> suffix. For the
+dropbear example above, the database file name will be
+<tt>pkg-dropbear-0.52-FILES</tt> and that database file must be in the
+<tt>/usr/share/ttylinux</tt> directory.
+
+<p>
+Use the <tt>-v</tt> or <tt>-verbose</tt> option to get verbose output during package
+making.
+
+<p>
+See section <a href="#foreignpacman">4.10.2</a> for using pacman on a non-ttylinux host to make
+ttylinux packages.
+
+<p>
+<b>Query All</b> <i>List the Installed Packages</i>
+
+<p>
+Examples
+<pre>
+	pacman -qa
+	pacman --query-all
+</pre>
+
+<p>
+Use the <tt>-qa</tt> or <tt>-query-all</tt> option to see the list of all installed
+packages. This command shows the general package names, not the actual binary
+package file names. The package names shown by this command are the package
+names to use with the <tt>pacman</tt> erase command.
+
+<p>
+<b>Query File</b> <i>Show the Package to which a File Belongs</i>
+
+<p>
+Examples
+<pre>
+	pacman -qf /bin/login
+	pacman --query-file /bin/ls /usr/bin/pacman
+</pre>
+
+<p>
+Use the <tt>-qf</tt> or <tt>-query-file</tt> option to find out which package a
+file belongs to. If the given file name does not actually exists on the system
+there will be no output from <tt>pacman</tt>. If the given file name is not in
+an installed package, then there will be no output from <tt>pacman</tt>.
+
+<p>
+<b>Query List</b> <i>List the Files of an Installed Package</i>
+
+<p>
+Examples
+<pre>
+	pacman -ql e2fsprogs-1.41.3
+	pacman --query-list e2fsprogs-1.41.3 bash-3.2.48
+</pre>
+
+<p>
+Use the <tt>-ql</tt> or <tt>-query-list</tt> option to list all files in the given
+package.
+
+<p>
+<b>Query Repository</b>
+
+<p>
+Examples
+<pre>
+	pacman -qr
+	pacman --query-repo calc e2fsprogs-1.41.3-i486.tbz
+	pacman -qr --repo=waldo.net
+</pre>
+
+<p>
+Use the <tt>-qr</tt> or <tt>-query-repo</tt> option to list packages in an external
+ttylinux package repository.
+
+<p>
+When the <tt>-repo=</tt> option is used, then only that repository is used;
+otherwise the <tt>ttylinux.net</tt> repository <i>and</i> all the repositories
+named in the <tt>/etc/ttylinux-repo</tt> file are used.
+
+<p>
+The package name is the actual name of the binary package file; this is the
+same package name to use when installing a package.
+
+<p>
+When no package name is given all packages in the appropriate repositories are
+listed. This can be bothersome when looking for a particular package, as the
+name of the package may scroll way off the screen as the repository is listed.
+Use the name of a package, or a partial name, with this command to limit the
+output to the package of interest. The package names given with this command
+can be shortened; the partial name must be from the beginning of the package
+name, with no gaps or wildcards. For example, a repository query for package
+name <tt>calc</tt> will find and list only the binary package files beginning with
+<tt>calc</tt>, listing the actual package names such as
+<tt>calc-2.12.4.0-i486.tbz</tt> and <tt>calc-2.12.4.0-x86_64.tbz</tt>. All
+appropriate repositories will be search in this manner.
+
+<p>
+
+<h3><a name="SECTION000510200000000000000"></a>
+<a name="foreignpacman"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">10</span>.<span class="arabic">2</span> Using pacman on a non-ttylinux Host
+</h3>
+
+<p>
+<b>Package Making Issues</b>
+
+<p>
+The intended use of <tt>pacman</tt> on non-ttylinux hosts is for assembling
+ttylinux packages.
+
+<p>
+Package making seems an easy task as ttylinux packages are <tt>tar</tt> archives
+compressed with <tt>bzip2</tt>. A complicating factor in using <tt>pacman</tt> to
+make ttylinux packages is that the package making operation is an exact inverse
+of package installation, and there is a controlling list of files that comprises
+the files in the package. This controlling list of files is the database file
+associated with the package.
+
+<p>
+A package database file is created by the <tt>pacman</tt> package installation
+operation; it is read by the <tt>pacman</tt> package making operation.
+
+<p>
+All the package database files are in the <tt>/etc/share/ttylinux</tt> directory,
+which your non-ttylinux host probably does not have, nor should you want that
+directory on your non-ttylinux host.
+
+<p>
+Also, package installation puts files in directories all over your system, and
+for the inverse operation of package making you do not want to get files from
+directories all over your system. Putting files all around your system's
+directories in order to make a ttylinux package is a bothersome at best, and
+risky at worst.
+
+<p>
+Ideally, you would have a staging area, with the ttylinux files for which you
+want to create a package, under a single convenient private directory. And
+the package database file in a convenient private directory.
+
+<p>
+<b>Alternate Directories</b>
+
+<p>
+<tt>pacman</tt> can use a user-specified root directory from which it gets the
+files to make a package, and it can use a user-specified directory to look for
+the package database file. These user-specified directories, file root and
+package database directories, are used by <b>all</b> the <tt>pacman</tt> operations
+except package <i>download</i> and <i>query repo</i> operations. With this
+capabilities, <tt>pacman</tt> can install, query and make packages all with an
+alternate private root directory, and using an alternate private directory for
+managing the package database files.
+
+<p>
+The appropriate way to use <tt>pacman</tt> on a non-ttylinux host is to set the
+<tt>pacman</tt> file root and package database directories to your own alternate
+private directories. This is done by using environment variables. It may be
+convenient to use shell scripts in which the environment variables that
+control the user-specified directories are set, and sequences of <tt>pacman</tt>
+commands work within this environment.
+
+<p>
+There are three environment variables that customize <tt>pacman</tt> behaviour.
+
+<p>
+<pre>
+PACMAN_FILES_ROOT_DIR  This sets the root directory that pacman uses to install
+                       files and also to look for files when making packages or
+                       removing packages. The default that pacman uses when
+                       this is not set is the system's root directory, /.
+
+PACMAN_PACKAGE_DB_DIR  This sets the directory in which to refer to, make or
+                       remove the package database files. The default that
+                       pacman uses when this is not set is /usr/share/ttylinux.
+
+PACMAN_REPO_CACHE_DIR  This sets the directory that pacman uses to make
+                       repository cache files for all repository operations.
+                       The default that pacman uses when this is not set is
+                       /usr/share/ttylinux.
+</pre>
+
+<p>
+An example usage of these environment variables for using <tt>pacman</tt> on a
+non-ttylinux host is:
+<pre>
+#!/bin/bash
+
+# Script to merge the bash and busybox packages into one single package.
+# The pacman script must be in the $PATH.
+
+export PACMAN_FILES_ROOT_DIR=$(pwd)/p_root
+export PACMAN_PACKAGE_DB_DIR=$(pwd)/p_root/usr/share/ttylinux
+export PACMAN_REPO_CACHE_DIR=$(pwd)/p_root/usr/share/ttylinux
+
+# Remove everything created by this script so that this script is repeatable.
+#
+rm -rf p_root
+rm -rf new-stuff-i486.tbz
+
+# Make an alternate root directory.
+#
+mkdir -p p_root/usr/share/ttylinux
+
+pacman --repo=ttylinux.net --install --vers=9.1 bash-3.2.48-i486.tbz
+#
+# Now these two files are installed:
+#      $(pwd)/p_root/bash
+#      $(pwd)/p_root/sh -&gt; bash
+# And there is a package database file:
+#      $(pwd)/p_root/usr/share/ttylinux/pkg-bash-3.2.48-FILES
+# And there is a repository cache file:
+#      $(pwd)/p_root/usr/share/ttylinux/repo-ttylinux.net
+
+pacman --repo=ttylinux.net --install --vers=9.1 busybox-1.15.3-i486.tbz
+#
+# Now there are a bunch of files in:
+#      $(pwd)/p_root/bin/
+#      $(pwd)/p_root/sbin/
+#      $(pwd)/p_root/usr/bin/
+#      $(pwd)/p_root/usr/sbin/
+#      &lt;etc&gt;
+# And there is a package database file:
+#      $(pwd)/p_root/usr/share/ttylinux/pkg-busybox-1.15.3-FILES
+# And there is a repository cache file:
+#      $(pwd)/p_root/usr/share/ttylinux/repo-ttylinux.net
+
+# Merge the two packages and make a new single package.
+#
+cat $(pwd)/p_root/usr/share/ttylinux/pkg-bash-3.2.48-FILES \
+    $(pwd)/p_root/usr/share/ttylinux/pkg-busybox-1.15.3-FILES \
+    &gt;$(pwd)/p_root/usr/share/ttylinux/pkg-new-stuff-FILES
+pacman --make new-stuff-i486.tbz
+
+# Show the new package binary file.
+#
+ls -hl new-stuff-i486.tbz
+
+exit 0
+</pre>
+
+<p>
+
+<h2><a name="SECTION000511000000000000000"></a>
+<a name="sysconfig"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">11</span> Using the sysconfig Script
+</h2>
+
+<p>
+The <tt>/sbin/sysconfig</tt> shell script can be used to set, and to show, the
+fields in various ttylinux system configuration files; it can set or show any
+value for any "ITEM=value" line in any configuration file in the
+<tt>/etc/sysconfig</tt> and <tt>/etc/sysconfig/network-scripts</tt> directories.
+
+<p>
+The following commands sets "ENABLE=yes" and "DHCP=yes" in the
+<tt>/etc/sysconfig/network-scripts/ifcfg-eth0</tt> file.
+
+<p>
+<pre>
+	sysconfig -nc ifcfg-eth0.enable=yes
+	sysconfig -nc ifcfg-eth0.dhcp=yes
+</pre>
+
+<p>
+The "-nc" option in the above examples tells the sysconfig script to work on
+files in the <tt>/etc/sysconfig/network-scripts</tt> directory. The second option
+is in the form file.item=value.
+
+<p>
+To change the IP address of the Ethernet network interface, with 192.168.1.100
+as the example IP address, with a netmask of 255.255.255.0 and standard subnet
+gateway and broadcast addresses, use the following sequence of sysconfig script
+commands.
+
+<p>
+<pre>
+	sysconfig -nc ifcfg-eth0.ipaddress=192.168.1.100
+	sysconfig -nc ifcfg-eth0.network=192.168.1.0
+	sysconfig -nc ifcfg-eth0.netmaks=255.255.255.0
+	sysconfig -nc ifcfg-eth0.gateway=192.168.1.1
+	sysconfig -nc ifcfg-eth0.broadcast=192.168.1.255
+</pre>
+
+<p>
+Use "-sc" for the first option to the <tt>sysconfig</tt> script in order to work
+with system configuration files in the <tt>/etc/sysconfig</tt> directory.
+
+<p>
+Use the following command to get complete, up-to-date help description directly
+from <tt>/sbin/sysconfig</tt>
+<pre>
+	sysconfig --help
+</pre>
+
+<p>
+
+<h2><a name="SECTION000512000000000000000">
+<span class="arabic">4</span>.<span class="arabic">12</span> Depricated and Legacy Items</a>
+</h2>
+
+<p>
+
+<h3><a name="SECTION000512100000000000000">
+<span class="arabic">4</span>.<span class="arabic">12</span>.<span class="arabic">1</span> Dial-up Networking</a>
+</h3>
+
+<p>
+ttylinux 9.3 is does not <i>directly</i> support dial-up networking with PPP and
+has no support at all for ISDN. Previous versions of ttylinux did have PPP and
+ISDN support; their package structure is being re-organized and they may return
+in later 9.X version of ttylinux.
+
+<p>
+ttylinux 9.3 does have the PPP binaries: <tt>/usr/sbin/pppd</tt> and
+<tt>/usr/sbin/chat</tt>, but currently it is up to you to configure and use them.
+
+<p>
+
+<h1><a name="SECTION00060000000000000000">
+<span class="arabic">5</span> Add-ons</a>
+</h1>
+
+<p>
+Add-ons packages, such as <tt>thttpd</tt> a tiny web server, are available at the
+ttylinux web site. There also are links to any known off-site ttylinux add-on
+resources. New add-ons submitted to ttylinux will be considered for inclusion
+at the web site.
+
+<p>
+The ttylinux package manager, <tt>pacman</tt>, has the ability to install add-ons
+directly from the ttylinux web site. Section <a href="#pacmanger">4.10</a> describes the
+<tt>pacman</tt> ttylinux package manager.
+
+<p>
+
+<h1><a name="SECTION00070000000000000000">
+<span class="arabic">6</span> Contact and Help</a>
+</h1>
+
+<p>
+Reporting bugs in ttylinux and its documents is appreciated. For bug reports,
+suggestions, or anything else about ttylinux that you think is important, feel
+free to contact me. You can reach me by email at:
+
+<p>
+Douglas Jerome <tt>&lt;douglas@ttylinux.org&gt;</tt>
+
+<p>
+There is a web-based forum that is active from time to time; it is active when
+this was written, April 2010, and is intended to be active as long as
+minimalinux is supporting ttylinux, barring spammer abuse.
+
+<p>
+ <tt>http://www.minimalinux.org/forum/</tt>
+
+<p>
+Help may be available on irc, although it is very low bandwith and usually more
+appropriate for inane banter.
+
+<p>
+ <tt>irc.freenode.net</tt> #<tt>ttylinux</tt>
+
+<p>
+
+<p>
+
+<h1><a name="SECTION00080000000000000000">
+A. ttylinux-specific Commands Overview</a>
+</h1>
+
+<p>
+Separate from the initscripts in <tt>/etc/rc.d/initd</tt> directory, the
+following table lists the ttylinux-specific scripts intended to be available
+for ttylinux root users.
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Script</td>
+<td align="LEFT">Directory</td>
+<td align="LEFT">Usage</td>
+</tr>
+<tr><td align="LEFT">ifdown</td>
+<td align="LEFT">/sbin</td>
+<td align="LEFT">Shutdown Ethernet Network Interface</td>
+</tr>
+<tr><td align="LEFT">ifup</td>
+<td align="LEFT">/sbin</td>
+<td align="LEFT">Startup Ethernet Network Interface</td>
+</tr>
+<tr><td align="LEFT">service</td>
+<td align="LEFT">/sbin</td>
+<td align="LEFT">Execute a script in <tt>/etc/rc.d/init.d</tt></td>
+</tr>
+<tr><td align="LEFT">shutdown</td>
+<td align="LEFT">/sbin</td>
+<td align="LEFT">Reboot or Shutdown the System</td>
+</tr>
+<tr><td align="LEFT">sysconfig</td>
+<td align="LEFT">/sbin</td>
+<td align="LEFT">Modify a System Configuration File</td>
+</tr>
+<tr><td align="LEFT">ttylinux-flash</td>
+<td align="LEFT">/sbin</td>
+<td align="LEFT">Copy ttylinux to Flash Disk</td>
+</tr>
+<tr><td align="LEFT">ttylinux-installer</td>
+<td align="LEFT">/sbin</td>
+<td align="LEFT">Install ttylinux onto A Disk</td>
+</tr>
+<tr><td align="LEFT">pacman</td>
+<td align="LEFT">/usr/bin</td>
+<td align="LEFT">ttylinux Package Manager</td>
+</tr>
+</table>
+</div>
+
+<p>
+
+<h1><a name="SECTION00090000000000000000"></a>
+<a name="flashdiskhowto"></a>
+<br>
+B. Flash_Disk_Howto.txt
+</h1>
+
+<p>
+<pre>
+How to Put ttylinux on a Flash Disk and Make it Bootable
+Copyright (C) 2008-2010 Douglas Jerome &lt;douglas@ttylinux.org&gt;
+
+
+FILE NAME
+
+	$RCSfile: Flash_Disk_Howto.txt,v $
+	$Revision: 1.11 $
+	$Date: 2010/03/01 02:33:11 $
+
+PROGRAM INFORMATION
+
+	Developed by:	ttylinux project
+	Developer:	Douglas Jerome, drj, &lt;douglas@ttylinux.org&gt;
+
+FILE DESCRIPTION
+
+	This document is a guide to putting ttylinux on a flash disk and making
+	the it bootable.
+
+CHANGE LOG
+
+	28feb10	drj	Corrected for the latest CD-ROM layout and added timeout
+			to the boot loaders to allow for boot options.
+
+	19dec09	drj	Corrected the description of the two required flash
+			drive directories. credit &lt;legendre@nerp.net&gt;
+
+	01sep09	drj	Updated to be consistent with revised ttylinux-flash
+			script and the CD-ROM directory and file structure.
+
+	07dec08	drj	Changed some descriptions for using the syslinux
+			executable program on the ttylinux CD-ROM.
+
+	04dec08	drj	Added suggestions on mounting the CD-ROM and USB disk.
+
+	22nov08	drj	Added failure path descriptions.  Finished testing the
+			installation processes.  Added section numbers and the
+			outline.
+
+	22nov08	drj	Changed ram0 location from flash disk to /tmp.  Fixed
+			the device referenced by the syslinux command.  Added
+			description of lilo's anomalous behavior.  Fixed the
+			fdisk usage in the description of boot problems.
+
+	21nov08	drj	Finished and baselined first version for ttylinux.
+
+
+                ------------------------------------------------
+
+
+How to Put ttylinux on a Flash Disk and Make it Bootable
+
+
+-- Document Outline --
+1. Preface
+2. Introduction
+3. Lilo Method
+4. Syslinux Method
+5. Automated Help
+6. Boot Problems
+
+
+==========
+1. Preface
+==========
+
+Caveat:  The syslinux method is known to work with syslinux-3.72.
+Caveat:  Instead of booting ttylinux, your flash disk may become unusable, but
+         that is not known to have happened.
+
+Advice:  Read before doing; reading does not take very long.  Look at the end
+         of this short document for problems and possible resolutions.
+
+
+===============
+2. Introduction
+===============
+
+Flash disks include USB disks which are often called flash drives, pen drives,
+USB memory sticks, travel drives, etc.
+
+This file describes two methods of copying ttylinux from its bootable CD-ROM
+and putting it onto a flash disk that is also made bootable.  The syslinux
+and lilo methods both can be done by ttylinux, but notice the syslinux program
+that makes the flash disk become bootable is not in the ttylinux file system,
+it is in the root directory on the ttylinux CD-ROM.  These methods probably
+only make sense on a Linux system, particularly the lilo method.
+
+You should save all your data on the flash disk to somewhere else and then
+remove all files and directories from the flash disk.  Making a mistake in this
+process can endanger any data on the flash disk.  Also, if the Linux kernel is
+too far from the beginning of the flash disk memory it may not be bootable;
+this has nothing to do with where the file name is in a directory listing or in
+Windows explorer.
+
+You can format the flash disk to be a Linux file system, but leaving a USB disk
+in Windows format, probably vfat aka W95 FAT32, is very convenient.
+
+Prerequisites:  Depending upon the method you use, you need to have privilege
+                to write to the flash disk device e.g. /dev/sdc or to write to
+                its mountable partition you want to use e.g. /dev/sdc1, and
+                with the lilo method you need to create a device node.  It is
+                therefore very likely you need to be root.
+
+                You need to *know* the flash disk device node e.g. /dev/sdc and
+                its mountable partition you want to use e.g. /dev/sdc1.  Read
+                the previous sentence again, note the distinction between the
+                disk and partition devices.
+
+In the following descriptions &lt;disk&gt; and &lt;partition&gt; are used to represent
+device nodes in the /dev directory.
+
+&lt;disk&gt; is the device node of the entire flash disk e.g. sdc, in which case
+       /dev/&lt;disk&gt; represents /dev/sdc.
+
+&lt;partition&gt; is the device node of the mountable partition on the flash disk
+            that you want to use to store the Linux kernel and ttylinux file
+            system e.g. sdc1, in which case /dev/&lt;partition&gt; represents
+            /dev/sdc1.
+
+In the following descriptions, /mnt/flash references the mount point in your
+file system to which the flash disk mounts.  Your actual mount point may be
+different, substitute accordingly.
+
+A USB disk partition probably should be mounted with the following mount
+command.  The second command gives you the UUID of the mounted partition, it
+may not work, but if it does then write down or otherwise save the UUID.
+
+     $ mount -t vfat /dev/&lt;partition&gt; /mnt/flash
+     $ blkid /dev/&lt;partition&gt;
+
+/mnt/cdrom represents the location of the mounted CD-ROM in the following
+descriptions.
+
+Have the ttylinux boot CD-ROM in the CD-ROM drive and mount it.  The CD-ROM
+should be mounted as type iso9660 e.g., mounted by the following command.
+
+     $ mount -t iso9660 /dev/&lt;disk&gt; /mnt/cdrom
+
+If you have an image of the ttylinux CD-ROM mounted via loopback device, or
+have the files from the ttylinux CD-ROM in another directory, you can use that.
+
+In the following descriptions there are example commands; they are prefixed by
+a shell prompt of "$ ", and comments to shell commands begin with the shell
+comment character '#".
+
+
+==============
+3. Lilo Method
+==============
+
+Warning:  After performing this method subsequent uses of the syslinux method
+          may have no affect, or misboot with odd errors, or the lilo boot
+          loader may remain on the flash disk and continue to boot the kernel.
+          I've never seen the syslinux method work after using this lilo
+          method.  There is a way to fix this; it is described at the end of
+          the syslinux method.
+
+Mount the flash disk.  The following description uses /mnt/flash to reference
+the mount point of the flash disk.  Did you remember to first save everything
+you want to keep off the flash disk and remove everything from it?  After
+mounting the flash disk, create two new directories named "boot" and "config"
+on the flash disk.
+
+     $ mkdir /mnt/flash/boot
+     $ mkdir /mnt/flash/config
+
+The flash disk should now have nothing on it except the two empty directories
+just made, /boot and /config.
+
+Copy the ttylinux Linux kernel and ttylinux file system image from the CD-ROM
+onto the flash disk; put them into the boot directory.
+
+     $ cp /mnt/cdrom/boot/vmlinuz          /mnt/flash/boot/
+     $ cp /mnt/cdrom/boot/filesys.gz       /mnt/flash/boot/
+     $ cp /mnt/cdrom/config/ttylinux-setup /mnt/flash/config/ttylinux
+
+You need a ram0 device node for lilo to reference during the boot installation.
+If you don't have one in /dev then you need to make one somewhere; it is better
+to NOT make one in /dev in the case your system uses udev.  You can make one in
+/tmp with the following command.
+
+     $ mknod -m 660 /tmp/ram0 b 1 0
+
+A lilo configuration file is needed.  It is convenient to put it on the flash
+disk in the boot directory; the file is /mnt/flash/boot/lilo.conf.  Use the
+following example lilo.conf file, changing &lt;disk&gt; and &lt;/mnt/flash&gt; and
+&lt;/dev/ram0&gt; to be the actual values.  Use ttylinux-flash=&lt;UUID&gt; ONLY if you got
+the UUID when previously mounting the USB disk partition, replacing &lt;UUID&gt; with
+the actual UUID value.
+
+NOTE The location of the ram0 device is the actual one you want to use; if you
+     didn't create one then it probably is /dev/ram0.
+
+NOTE Everything between the dashed lines is the /mnt/flash/boot/lilo.conf file.
+
+-------------------------------------------------------------------------------
+boot = /dev/&lt;disk&gt;
+disk = /dev/&lt;disk&gt; bios=0x80
+map  = &lt;/mnt/flash&gt;/boot/map
+
+install     = menu
+menu-scheme = Yb:Yk:kb:Yb
+menu-title  = "LILO (LInux LOader) boot ttylinux"
+
+compact
+default = ttylinux
+lba32
+prompt
+timeout = 150
+
+image=&lt;/mnt/flash&gt;/boot/vmlinuz
+     append = "ro ttylinux-flash=&lt;UUID&gt;"
+     label  = ttylinux
+     root   = &lt;/dev/ram0&gt;
+     initrd = &lt;/mnt/flash&gt;/boot/filesys.gz
+     read-only
+-------------------------------------------------------------------------------
+
+After the lilo.conf file is correct, execute lilo to make the flash disk
+bootable with these two commands.
+
+     $ lilo -M /dev/&lt;disk&gt; mbr
+     $ lilo -C /mnt/flash/boot/lilo.conf
+
+There probably are many possible problems.  If there were no FATAL problems
+reported from lilo, unmount and reboot the flash disk.
+
+----------------
+Possible Problem
+----------------
+
+Lilo may detect a partition problem and give you message like the following:
+
+     Warning: boot record relocation beyond BPB is necessary: /dev/sdc
+     Added ttylinux *
+     Fatal: LILO internal error:  Would overwrite Partition Table
+
+--------------------
+Possible Resolutions
+--------------------
+
+If you have this problem you may want to do one of the following:
+
+=&gt; If you are using a USB disk then you can use a Windows-based USB boot disk
+   tool; several are freely available.
+
+=&gt; Use a commercial partition tool to fix the flash disk partition table.
+
+=&gt; Use a different flash disk.
+
+
+==================
+4. Syslinux Method
+==================
+
+You need to have the syslinux executable program.  The root directory of the
+ttylinux CD-ROM should have the syslinux executable program from syslinux-3.72.
+
+Other syslinux sources: You may have it in your current linux distribution.  Or
+you can get the latest version from
+http://www.kernel.org/pub/linux/utils/boot/syslinux/ and after untarring it,
+find the syslinux executable in the linux directory.
+
+Caveat:  The syslinux method is only known by the author to work with
+         syslinux-3.72; it probably works with newer versions and a few of the
+         older versions.
+
+Mount the flash disk.  The following description uses /mnt/flash to reference
+the mount point of the flash disk.  Did you remember to first save everything
+you want to keep off the flash disk and remove everything from it?  The flash
+disk should now have nothing on it.
+
+NOTE  The following lilo fixup also fixes many USB disks that do not properly
+      boot.
+
+NOTE  If you are doing this with a flash disk that previously was booting from
+      a lilo boot loader e.g., you previously used the above lilo method, then
+      perform this lilo operation before continuing:
+
+      $ lilo -M /dev/&lt;disk&gt; mbr
+
+Mount the flash disk.  The following description uses /mnt/flash to reference
+the mount point of the flash disk.  Did you remember to first save everything
+you want to keep off the flash disk and remove everything from it?  After
+mounting the flash disk, create some new directories on the flash disk:
+
+     $ mkdir /mnt/flash/boot
+     $ mkdir /mnt/flash/boot/syslinux
+     $ mkdir /mnt/flash/config
+
+Copy the syslinux help message files from the CD-ROM onto the flash disk.  Copy
+the ttylinux Linux kernel and ttylinux file system image files from the CD-ROM
+onto the flash disk:
+
+     $ cp /mnt/cdrom/boot/vmlinuz          /mnt/flash/boot/
+     $ cp /mnt/cdrom/boot/filesys.gz       /mnt/flash/boot/
+     $ cp /mnt/cdrom/boot/boot.msg         /mnt/flash/boot/syslinux/
+     $ cp /mnt/cdrom/boot/help.msg         /mnt/flash/boot/syslinux/
+     $ cp /mnt/cdrom/config/syslinux       /mnt/flash/config/syslinux
+     $ cp /mnt/cdrom/config/ttylinux-setup /mnt/flash/config/ttylinux
+
+A syslinux configuration file is needed.  It must be put on the flash disk in
+the boot/syslinux directory; the file is /mnt/flash/boot/syslinux/syslinux.cfg.
+Use the following example syslinux.cfg file.  Use ttylinux-flash=&lt;UUID&gt; ONLY if
+you got the UUID when previously mounting the USB disk partition, replacing
+&lt;UUID&gt; with the actual UUID value.  Everything between the dashed lines is the
+/mnt/flash/boot/syslinux/syslinux.cfg file.
+long.
+
+-------------------------------------------------------------------------------
+default ttylinux
+display boot.msg
+prompt  1
+timeout 150
+
+F1 boot.msg
+F2 help.msg
+
+label ttylinux
+        kernel /boot/vmlinuz
+        append initrd=/boot/filesys.gz root=/dev/ram0 ro ttylinux-flash=&lt;UUID&gt;
+-------------------------------------------------------------------------------
+
+Now make the flash disk bootable with syslinux; notice the partition device is
+used, not the disk device.
+
+     $ syslinux -d boot/syslinux /dev/&lt;partition&gt;
+
+There probably are many possible problems.  If there were no problems, unmount
+and reboot the flash disk.
+
+----------------
+Possible Problem
+----------------
+
+When executing the syslinux command you see an error message something like
+"Cluster sizes larger than 16K not supported".
+
+--------------------
+Possible Resolutions
+--------------------
+
+Install a more recent version of syslinux.
+
+
+=================
+5. Automated Help
+=================
+
+It really is best to use the script described herein.
+
+For the automated help described below, both the CD-ROM and the flash disk must
+be mounted before executing the ttylinux-flash script.
+
+There is a shell script in the ttylinux file system that does a variation of
+the lilo and syslinux methods.  Backup anything you want to keep from your
+flash disk before using the script.  The script is invoked with a command line
+option telling it which method to use; guess which option does which.
+
+ttylinux-flash --lilo     &lt;CD-ROM path&gt; &lt;flash disk path&gt; &lt;flash disk device&gt;
+ttylinux-flash --syslinux &lt;CD-ROM path&gt; &lt;flash disk path&gt; &lt;flash disk device&gt;
+
+The following command examples use the same conventions as above for the paths
+and device nodes.
+
+ttylinux-flash --lilo     /mnt/cdrom /mnt/flash /dev/&lt;disk&gt;
+ttylinux-flash --syslinux /mnt/cdrom /mnt/flash /dev/&lt;disk&gt;
+
+If you want to run this script from a Linux system other than ttylinux, then
+run it from the ttylinux mounted at /mnt/cdrom, it will be
+/mnt/cdrom/sbin/ttylinux-flash.
+
+
+================
+6. Boot Problems
+================
+
+General
+-------
+
+Some flash disks seem to have a boot problem, something wrong with their zero
+block Master Boot Record (MBR).  Run fdisk on the disk device /dev/&lt;disk&gt; to
+see if the Boot flag is set on the partition that has the Linux kernel,
+/dev/&lt;partition&gt;.
+
+     # Check for the Boot flag
+     #
+     fdisk -l /dev/&lt;disk&gt;
+
+If the Boot flag is not set, use fdisk to toggle the bootable flag; the fdisk
+command is 'a'.  The fdisk usage will look something like the following, if the
+partition with the Linux kernel is 1.
+
+     $ fdisk /dev/&lt;disk&gt;
+     Command (m for help): a
+     Partition number (1-8): 1
+     Command (m for help): w
+
+It also is best to use this lilo command, after having used fdisk to set the
+partition bootable flag:
+
+     $ lilo -M /dev/&lt;disk&gt; mbr
+
+Strange Lilo Boot Errors
+------------------------
+
+If you get part of the word LILO and then nothing or a repeating sequence of
+numbers or words, or if you get "Can't load operating system" or even nothing
+at all: put the flash disk back into the computer from wich you where loading
+it with ttylinux and try this lilo command:
+
+     $ lilo -M /dev/&lt;disk&gt; mbr
+
+Try bootable again after executing the above command; if the flash disk still
+doesn't correctly boot, you may need to repeat either the lilo or syslinux
+method of installing ttylinux.
+
+
+[eof]
+</pre>
+
+<p>
+<br><hr>
+
+</body>
+</html>

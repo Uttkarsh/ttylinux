@@ -1,0 +1,64 @@
+# Make the window wide enough to see this description; 132 character width is good:
+<---------------------------------------------------------------------------------------------------------------------------------->
+
+# ***** This document is very incomplete. *****
+
+# Legend
+# ------
+# script invokation as a program: ..........>
+# script sourcing (reading file): <---------<
+#   writing to directory or file: ~~~~~~~~~~>
+
+
+
+${TTYLINUX_DIR}                        scripts                                 config                                  build-root
+---------------                        -------                                 ------                                  ----------
+
+
+
+make init ........................> bld-init.sh
+
+                                    bld-init.sh <---+
+                                    _functions.sh >-+
+
+ttylinux-config.sh >--------------> bld-init.sh
+
+                                    bld-init.sh ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~> build-root/
+
+                                    bld-init.sh ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~> ${PLATFORM}/
+
+                                    bld-init.sh <----------------------------< ${PLATFORM}/bld.cfg
+
+                                    bld-init.sh .............................> ${BOOTLOADER}/bld.sh
+
+                                                                               ${BOOTLOADER}/bld.sh ~~+
+                                                                               ${BOOTLOADER}/ <~~~~~~~+
+
+
+
+make clean .......................> bld-clean.sh
+
+                                    bld-clean.sh <--+
+                                    _functions.sh >-+
+
+ttylinux-config.sh >--------------> bld-clean.sh
+
+                                    bld-clean.sh ............................> ${BOOTLOADER}/bld-clean.sh
+
+                                                                               ${BOOTLOADER}/bld-clean.sh ~~+
+                                                                               ${BOOTLOADER}/ <~~~~~~~~~~~~~+
+
+
+
+make boot ........................> bld-boot.sh
+
+                                    bld-boot.sh <---+
+                                    _functions.sh >-+
+
+ttylinux-config.sh >--------------> bld-boot.sh
+
+                                    bld-boot.sh .............................> ${PLATFORM}/bld-boot.sh
+
+                                                                               ${PLATFORM}/bld-boot.sh ~~+
+                                                                               ${CONFIG}/ <~~~~~~~~~~~~~~+
+

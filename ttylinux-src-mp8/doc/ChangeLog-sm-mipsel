@@ -1,0 +1,27 @@
+Current  Maintainer: (2008-    ) Douglas Jerome <douglas@ttylinux.org>
+
+
+Version 9.10,
+ - distribution named "maiko"
+ - updated from busybox-1.18.1 to busybox-1.18.4
+
+Version 9.9, Sat Feb 26 20:44:34 MST 2011
+ - distribution named "boomer"
+ - (busybox) dhcp client adds OpenDNS nameservers if dhcp server doesn't
+ - (pacman) fixed for empty repo and --vers= srting
+
+Version 9.8, Sun Feb 20 12:30:40 MST 2011
+ - distribution named "zoomer"
+ - reverted to glibc-2.9, hence the version number regression
+ - reverted to busybox for losetup, mount, umount and kernel module utils
+ - build system: major re-oranization
+ - build system: ISO now has all ttylinux packages, separate from initrd
+ - Linux kernel: updated from 2.6.20 to 2.6.34.6
+ - updated from busybox-1.17.4 to busybox-1.18.1
+ - (busybox) added many programs
+ - (iptables) added on/off FORWARD control
+ - (gpm) removed gpm
+
+Version 12.3, Sat Dec 25 20:18:31 MST 2010
+ - distribution named "mana"
+ - initial mipsel release

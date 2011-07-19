@@ -1,0 +1,12 @@
+bin/lowntfs-3g
+bin/ntfs-3g
+lib/libntfs-3g.so
+lib/libntfs-3g.so.80
+lib/libntfs-3g.so.80.0.0
+sbin/mount.lowntfs-3g
+sbin/mount.ntfs-3g
+usr/bin/ntfs-3g.probe
+usr/bin/ntfs-3g.secaudit
+usr/bin/ntfs-3g.usermap
+usr/lib/libntfs-3g.la
+usr/lib/libntfs-3g.so

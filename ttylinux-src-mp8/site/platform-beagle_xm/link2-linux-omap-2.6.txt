@@ -1,0 +1,1 @@
+http://git.kernel.org/?p=linux/kernel/git/tmlind/linux-omap-2.6.git;a=snapshot;h=73ee404d7dedd23e35aae3ce516c504db783716f;sf=tgz

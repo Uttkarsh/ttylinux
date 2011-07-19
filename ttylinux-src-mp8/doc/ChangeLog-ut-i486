@@ -1,0 +1,16 @@
+Current  Maintainer: (2008-    ) Douglas Jerome <douglas@ttylinux.org>
+
+
+Version 12.6,
+ - distribution named "maiko"
+ - updated from linux-2.6.34.6 to linux-2.6.38.1
+ - updated from busybox-1.18.1 to busybox-1.18.4
+
+Version 12.5, Sat Feb 26 20:44:34 MST 2011
+ - distribution named "boomer"
+ - (busybox) dhcp client adds OpenDNS nameservers if dhcp server doesn't
+ - (pacman) fixed for empty repo and --vers= srting
+
+Version 12.4, Sun Feb 20 12:30:40 MST 2011
+ - distribution named "zoomer"
+ - initial release

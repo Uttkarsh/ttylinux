@@ -1,0 +1,40 @@
+--- lilo-23.1-OLD/Makefile	2010-11-04 08:35:15.000000000 -0700
++++ lilo-23.1-NEW/Makefile	2011-01-15 21:37:31.000000000 -0700
+@@ -31,7 +31,6 @@
+ #
+ all: test
+ 	make -C src all
+-	make -C images all
+ 
+ #
+ # everything above plus the statically linked version
+--- lilo-23.1-OLD/make.vars	2010-06-28 13:47:31.000000000 -0700
++++ lilo-23.1-NEW/make.vars	2011-01-15 21:48:07.000000000 -0700
+@@ -93,9 +93,9 @@
+   cat $$DESTDIR/etc/lilo.defines; else echo $(CONFIG); fi ) | \
+   sed 's/-D/-DLCF_/g'`
+ LILO=-DLILO=0xbb920890
+-KVER=`if [ -f /usr/include/linux/version.h ]; then echo -DHAS_VERSION_H; fi`
+-HDM=`if [ -f /usr/include/libdevmapper.h ]; then echo -DHAS_LIBDEVMAPPER_H; fi`
+-DEVMAPPER=`if [ -f /usr/include/libdevmapper.h ]; then echo "-ldevmapper"; fi`
++KVER=`if [ 1 -eq 1 ]; then echo -DHAS_VERSION_H; fi`
++HDM=`if [ 0 -eq 1 ]; then echo -DHAS_LIBDEVMAPPER_H; fi`
++DEVMAPPER=`if [ 0 -eq 1 ]; then echo "-ldevmapper"; fi`
+ 
+ TMP=_TmP_
+ 
+--- lilo-23.1-OLD/src/Makefile	2010-11-04 08:35:52.000000000 -0700
++++ lilo-23.1-NEW/src/Makefile	2011-01-15 21:38:45.000000000 -0700
+@@ -254,10 +254,10 @@
+ 	mv tmp_make Makefile
+ 
+ version:	common.c lilo.h common.h
+-	$(CC) $(CFLAGS) -DSHS_MAIN -o version common.c
++	$(BUILD_CC) -DSHS_MAIN -o version common.c
+ 
+ mkloader:	temp.c
+-	$(CC) $(CFLAGS) -DLILO_BINARY -o mkloader temp.c
++	$(BUILD_CC) -DLILO_BINARY -o mkloader temp.c
+ 
+ 
+ tidy:
