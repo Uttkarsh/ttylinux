@@ -4,7 +4,7 @@
 # This file is part of the ttylinux software.
 # The license which this software falls under is as follows:
 #
-# Copyright (C) 2010-2010 Douglas Jerome <douglas@ttylinux.org>
+# Copyright (C) 2010-2011 Douglas Jerome <douglas@ttylinux.org>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the Free
@@ -25,8 +25,8 @@
 # Definitions
 # ******************************************************************************
 
-PKG_NAME="ncurses"
-PKG_VERSION="5.7"
+PKG_NAME="alsa-utils"
+PKG_VERSION="1.0.24.2"
 PKG_BLD_PARTS=""
 
 
@@ -46,20 +46,10 @@ return 0
 
 pkg_configure() {
 
-local WITHOUT_CXX=""
-
 PKG_STATUS="Unspecified error -- check the ${PKG_NAME} build log"
 
 cd "${PKG_NAME}-${PKG_VERSION}"
-
-mv misc/terminfo.src misc/terminfo.src-ORIG
-cp ${TTYLINUX_PKGCFG_DIR}/${PKG_NAME}-${PKG_VERSION}/terminfo.src \
-	misc/terminfo.src
-
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_set"
-if [[ x"${XBT_C_PLUS_PLUS}" = x"no" ]]; then
-	WITHOUT_CXX="--without-cxx --without-cxx-bindings"
-fi
 AR=${XBT_AR} \
 AS=${XBT_AS} \
 CC=${XBT_CC} \
@@ -74,23 +64,12 @@ CFLAGS="${TTYLINUX_CFLAGS}" \
 ./configure \
 	--build=${MACHTYPE} \
 	--host=${XBT_TARGET} \
-	--prefix=/usr \
-	--libdir=/lib \
-	--mandir=/usr/share/man \
-	--enable-shared \
-	--enable-overwrite \
-	--disable-largefile \
-	--disable-termcap \
-	--with-build-cc=gcc \
-	--with-install-prefix=${TTYLINUX_BUILD_DIR} \
-	--with-shared \
-	--without-ada \
-	${WITHOUT_CXX} \
-	--without-debug \
-	--without-gpm \
-	--without-normal
+	--target=${XBT_TARGET} \
+	--with-alsa-inc-prefix=${TTYLINUX_BUILD_DIR}/usr/include \
+	--with-alsa-prefix=${TTYLINUX_BUILD_DIR}/usr/lib \
+	--with-curses=ncurses \
+	--disable-xmlto
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_clr"
-
 cd ..
 
 PKG_STATUS=""
@@ -129,32 +108,10 @@ PKG_STATUS="Unspecified error -- check the ${PKG_NAME} build log"
 
 cd "${PKG_NAME}-${PKG_VERSION}"
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_set"
-
-PATH="${XBT_BIN_PATH}:${PATH}" make install
-
-ln="ln --force --symbolic"
-${ln} ../../lib/libncurses.so.5   ${TTYLINUX_BUILD_DIR}/usr/lib/libcurses.so
-${ln} ../../lib/libform.so.5      ${TTYLINUX_BUILD_DIR}/usr/lib/libform.so
-${ln} ../../lib/libmenu.so.5      ${TTYLINUX_BUILD_DIR}/usr/lib/libmenu.so
-${ln} ../../lib/libncurses.so.5   ${TTYLINUX_BUILD_DIR}/usr/lib/libncurses.so
-${ln} ../../lib/libpanel.so.5     ${TTYLINUX_BUILD_DIR}/usr/lib/libpanel.so
-${ln} ../../lib/libncurses.so.5.7 ${TTYLINUX_BUILD_DIR}/usr/lib/libcurses.so.5
-${ln} ../../lib/libform.so.5.7    ${TTYLINUX_BUILD_DIR}/usr/lib/libform.so.5
-${ln} ../../lib/libmenu.so.5.7    ${TTYLINUX_BUILD_DIR}/usr/lib/libmenu.so.5
-${ln} ../../lib/libncurses.so.5.7 ${TTYLINUX_BUILD_DIR}/usr/lib/libncurses.so.5
-${ln} ../../lib/libpanel.so.5.7   ${TTYLINUX_BUILD_DIR}/usr/lib/libpanel.so.5
-${ln} libncurses.so ${TTYLINUX_BUILD_DIR}/lib/libtinfo.so
-${ln} libncurses.so.5 ${TTYLINUX_BUILD_DIR}/lib/libtinfo.so.5
-${ln} libncurses.so.5.7 ${TTYLINUX_BUILD_DIR}/lib/libtinfo.so.5.7
-${ln} libncurses.so ${TTYLINUX_BUILD_DIR}/usr/lib/libtinfo.so
-${ln} libncurses.so.5 ${TTYLINUX_BUILD_DIR}/usr/lib/libtinfo.so.5
-${ln} libncurses.so.5.7 ${TTYLINUX_BUILD_DIR}/usr/lib/libtinfo.so.5.7
-unset ln
-
+PATH="${XBT_BIN_PATH}:${PATH}" make DESTDIR=${TTYLINUX_BUILD_DIR} install
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_clr"
 cd ..
 
-echo "Copying ${PKG_NAME} ttylinux-specific components to build-root."
 if [[ -d "rootfs/" ]]; then
 	find "rootfs/" ! -type d -exec touch {} \;
 	cp --archive --force rootfs/* "${TTYLINUX_BUILD_DIR}"

@@ -121,6 +121,7 @@ if [[ $# -gt 0 ]]; then
 				(
 				cd ${_dir}
 				[[ -f ./bld-clean.sh ]] && . ./bld-clean.sh
+				exit 0
 				)
 			fi
 		done

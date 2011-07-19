@@ -60,7 +60,7 @@
 package_get() {
 
 # Function Arguments:
-#      $1 ... Package name, like "glibc-2.12.1".
+#      $1 ... Package name, like "glibc-2.13".
 
 local srcPkg="$1"
 local tarBall=""
@@ -155,7 +155,7 @@ done <"${cfgPkgFiles}"
 package_xbuild() {
 
 # Function Arguments:
-#      $1 ... Package name, like "glibc-2.12.1".
+#      $1 ... Package name, like "glibc-2.13".
 
 # Check for the package build script.
 #
@@ -217,7 +217,7 @@ sleep 1 # For detecting files newer than INSTALL_STAMP
 #
 #	PKG_NAME	For example, "glibc".
 #
-#	PKG_VERSION	For example, "2.12.1".
+#	PKG_VERSION	For example, "2.13".
 #
 #	PKG_BLD_PARTS	This is set to the names of any other source packages
 #			that are needed to build the packages; these source

@@ -23,15 +23,15 @@
 # Malta CoreLV       mips          sm (SMall)       glibc-2.9     linux-2.6.34.6
 # Integrator CP      armv5tej      sm (SMall)       glibc-2.9     linux-2.6.34.6
 # PC                 i486          sm (SMall)       glibc-2.9     linux-2.6.34.6
-# PC                 i486          ut (UTility)     glibc-2.12.1  linux-2.6.38.1
-# PC                 i686          ut (UTility)     glibc-2.12.1  linux-2.6.38.1
-# PC                 x86_64        ut (UTility)     glibc-2.12.1  linux-2.6.38.1
-# Beagle Board XP    armv7         ut (UTility)     glibc-2.12.1  linux-2.6.38.1
-# Macintosh G4       powerpc       ut (UTility)     glibc-2.12.1  linux-2.6.38.1
-# PC                 i486          ws (WorkStation) glibc-2.12.1  linux-2.6.38.1
-# PC                 i686          ws (WorkStation) glibc-2.12.1  linux-2.6.38.1
-# PC                 x86_64        ws (WorkStation) glibc-2.12.1  linux-2.6.38.1
-# Macintosh G4       powerpc       ws (WorkStation) glibc-2.12.1  linux-2.6.38.1
+# PC                 i486          ut (UTility)     glibc-2.13    linux-2.6.38.1
+# PC                 i686          ut (UTility)     glibc-2.13    linux-2.6.38.1
+# PC                 x86_64        ut (UTility)     glibc-2.13    linux-2.6.38.1
+# Beagle Board XP    armv7         ut (UTility)     glibc-2.13    linux-2.6.38.1
+# Macintosh G4       powerpc       ut (UTility)     glibc-2.13    linux-2.6.38.1
+# PC                 i486          ws (WorkStation) glibc-2.13    linux-2.6.38.1
+# PC                 i686          ws (WorkStation) glibc-2.13    linux-2.6.38.1
+# PC                 x86_64        ws (WorkStation) glibc-2.13    linux-2.6.38.1
+# Macintosh G4       powerpc       ws (WorkStation) glibc-2.13    linux-2.6.38.1
 #
 # About the classification of ttylinux, TTYLINUX_CLASS:
 #
@@ -60,7 +60,7 @@
 # definition in this list, or at least be the only one not a comment.
 #
 #TTYLINUX_TARGET="em-wrtu54g_tm-mipsel"		# em - Smaller System
-TTYLINUX_TARGET="sm-pc-i486"			# sm - Small System
+#TTYLINUX_TARGET="sm-pc-i486"			# sm - Small System
 #TTYLINUX_TARGET="sm-integrator_cp-armv5tej"	# sm - Small System
 #TTYLINUX_TARGET="sm-malta_lv-mipsel"		# sm - Small System
 #TTYLINUX_TARGET="ut-pc-i486"			# ut - Medium System
@@ -69,7 +69,7 @@ TTYLINUX_TARGET="sm-pc-i486"			# sm - Small System
 #TTYLINUX_TARGET="ut-beagle_xm-armv7"		# ut - Medium System
 #TTYLINUX_TARGET="ut-macintosh_g4-powerpc"	# ut - Medium System
 #TTYLINUX_TARGET="ws-pc-i486"			# ws - Larger System
-#TTYLINUX_TARGET="ws-pc-i686"			# ws - Larger System
+TTYLINUX_TARGET="ws-pc-i686"			# ws - Larger System
 #TTYLINUX_TARGET="ws-pc-x86_64"			# ws - Larger System
 #TTYLINUX_TARGET="ws-macintosh_g4-powerpc"	# ws - Larger System
 
@@ -219,15 +219,15 @@ case "${TTYLINUX_CLASS}-${TTYLINUX_CPU}" in
 	'sm-i486')	_libc_linux="2.9-2.6.34.6"    ;;
 	'sm-armv5tej')	_libc_linux="2.9-2.6.34.6"    ;;
 	'sm-mipsel')	_libc_linux="2.9-2.6.34.6"    ;;
-	'ut-i486')	_libc_linux="2.12.1-2.6.38.1" ;;
-	'ut-i686')	_libc_linux="2.12.1-2.6.38.1" ;;
-	'ut-x86_64')	_libc_linux="2.12.1-2.6.38.1" ;;
-	'ut-armv7')	_libc_linux="2.12.1-2.6.38.1" ;;
-	'ut-powerpc')	_libc_linux="2.12.1-2.6.38.1" ;;
-	'ws-i486')	_libc_linux="2.12.1-2.6.38.1" ;;
-	'ws-i686')	_libc_linux="2.12.1-2.6.38.1" ;;
-	'ws-x86_64')	_libc_linux="2.12.1-2.6.38.1" ;;
-	'ws-powerpc')	_libc_linux="2.12.1-2.6.38.1" ;;
+	'ut-i486')	_libc_linux="2.13-2.6.38.1" ;;
+	'ut-i686')	_libc_linux="2.13-2.6.38.1" ;;
+	'ut-x86_64')	_libc_linux="2.13-2.6.38.1" ;;
+	'ut-armv7')	_libc_linux="2.13-2.6.38.1" ;;
+	'ut-powerpc')	_libc_linux="2.13-2.6.38.1" ;;
+	'ws-i486')	_libc_linux="2.13-2.6.38.1" ;;
+	'ws-i686')	_libc_linux="2.13-2.6.38.1" ;;
+	'ws-x86_64')	_libc_linux="2.13-2.6.38.1" ;;
+	'ws-powerpc')	_libc_linux="2.13-2.6.38.1" ;;
 esac
 XBT_DIR="${CROSSTOOLS_DIR}/cross-tools-${_libc_linux}"
 unset CROSSTOOLS_DIR

@@ -4,7 +4,7 @@
 # This file is part of the ttylinux software.
 # The license which this software falls under is as follows:
 #
-# Copyright (C) 2010-2010 Douglas Jerome <douglas@ttylinux.org>
+# Copyright (C) 2010-2011 Douglas Jerome <douglas@ttylinux.org>
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the Free
@@ -25,8 +25,8 @@
 # Definitions
 # ******************************************************************************
 
-PKG_NAME="ncurses"
-PKG_VERSION="5.7"
+PKG_NAME="dropbear"
+PKG_VERSION="0.53.1"
 PKG_BLD_PARTS=""
 
 
@@ -35,8 +35,19 @@ PKG_BLD_PARTS=""
 # ******************************************************************************
 
 pkg_patch() {
+
+local patchDir="${TTYLINUX_PKGCFG_DIR}/${PKG_NAME}-${PKG_VERSION}/patch"
+local patchFile=""
+
+PKG_STATUS="Unspecified error -- check the ${PKG_NAME} build log"
+
+for patchFile in "${patchDir}"/*; do
+	[[ -r "${patchFile}" ]] && patch -p0 <"${patchFile}"
+done
+
 PKG_STATUS=""
 return 0
+
 }
 
 
@@ -46,20 +57,10 @@ return 0
 
 pkg_configure() {
 
-local WITHOUT_CXX=""
-
 PKG_STATUS="Unspecified error -- check the ${PKG_NAME} build log"
 
 cd "${PKG_NAME}-${PKG_VERSION}"
-
-mv misc/terminfo.src misc/terminfo.src-ORIG
-cp ${TTYLINUX_PKGCFG_DIR}/${PKG_NAME}-${PKG_VERSION}/terminfo.src \
-	misc/terminfo.src
-
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_set"
-if [[ x"${XBT_C_PLUS_PLUS}" = x"no" ]]; then
-	WITHOUT_CXX="--without-cxx --without-cxx-bindings"
-fi
 AR=${XBT_AR} \
 AS=${XBT_AS} \
 CC=${XBT_CC} \
@@ -70,27 +71,15 @@ OBJCOPY=${XBT_OBJCOPY} \
 RANLIB=${XBT_RANLIB} \
 SIZE=${XBT_SIZE} \
 STRIP=${XBT_STRIP} \
-CFLAGS="${TTYLINUX_CFLAGS}" \
+CFLAGS="${TTYLINUX_CFLAGS} -DLTC_NO_BSWAP" \
 ./configure \
 	--build=${MACHTYPE} \
 	--host=${XBT_TARGET} \
 	--prefix=/usr \
-	--libdir=/lib \
-	--mandir=/usr/share/man \
-	--enable-shared \
-	--enable-overwrite \
-	--disable-largefile \
-	--disable-termcap \
-	--with-build-cc=gcc \
-	--with-install-prefix=${TTYLINUX_BUILD_DIR} \
-	--with-shared \
-	--without-ada \
-	${WITHOUT_CXX} \
-	--without-debug \
-	--without-gpm \
-	--without-normal
+	--enable-shadow \
+	--disable-pam \
+	--disable-zlib
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_clr"
-
 cd ..
 
 PKG_STATUS=""
@@ -109,7 +98,12 @@ PKG_STATUS="Unspecified error -- check the ${PKG_NAME} build log"
 
 cd "${PKG_NAME}-${PKG_VERSION}"
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_set"
-PATH="${XBT_BIN_PATH}:${PATH}" make --jobs=${NJOBS} CROSS_COMPILE=${XBT_TARGET}-
+PATH="${XBT_BIN_PATH}:${PATH}" make --jobs=${NJOBS} \
+	ARFLAGS="rv" \
+	CROSS_COMPILE=${XBT_TARGET}- \
+	PROGRAMS="dropbear dbclient dropbearkey dropbearconvert scp" \
+	MULTI=1 \
+	SCPPROGRESS=1
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_clr"
 cd ..
 
@@ -125,36 +119,28 @@ return 0
 
 pkg_install() {
 
+local installDir="${TTYLINUX_BUILD_DIR}/usr/bin"
+
 PKG_STATUS="Unspecified error -- check the ${PKG_NAME} build log"
 
 cd "${PKG_NAME}-${PKG_VERSION}"
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_set"
-
-PATH="${XBT_BIN_PATH}:${PATH}" make install
-
-ln="ln --force --symbolic"
-${ln} ../../lib/libncurses.so.5   ${TTYLINUX_BUILD_DIR}/usr/lib/libcurses.so
-${ln} ../../lib/libform.so.5      ${TTYLINUX_BUILD_DIR}/usr/lib/libform.so
-${ln} ../../lib/libmenu.so.5      ${TTYLINUX_BUILD_DIR}/usr/lib/libmenu.so
-${ln} ../../lib/libncurses.so.5   ${TTYLINUX_BUILD_DIR}/usr/lib/libncurses.so
-${ln} ../../lib/libpanel.so.5     ${TTYLINUX_BUILD_DIR}/usr/lib/libpanel.so
-${ln} ../../lib/libncurses.so.5.7 ${TTYLINUX_BUILD_DIR}/usr/lib/libcurses.so.5
-${ln} ../../lib/libform.so.5.7    ${TTYLINUX_BUILD_DIR}/usr/lib/libform.so.5
-${ln} ../../lib/libmenu.so.5.7    ${TTYLINUX_BUILD_DIR}/usr/lib/libmenu.so.5
-${ln} ../../lib/libncurses.so.5.7 ${TTYLINUX_BUILD_DIR}/usr/lib/libncurses.so.5
-${ln} ../../lib/libpanel.so.5.7   ${TTYLINUX_BUILD_DIR}/usr/lib/libpanel.so.5
-${ln} libncurses.so ${TTYLINUX_BUILD_DIR}/lib/libtinfo.so
-${ln} libncurses.so.5 ${TTYLINUX_BUILD_DIR}/lib/libtinfo.so.5
-${ln} libncurses.so.5.7 ${TTYLINUX_BUILD_DIR}/lib/libtinfo.so.5.7
-${ln} libncurses.so ${TTYLINUX_BUILD_DIR}/usr/lib/libtinfo.so
-${ln} libncurses.so.5 ${TTYLINUX_BUILD_DIR}/usr/lib/libtinfo.so.5
-${ln} libncurses.so.5.7 ${TTYLINUX_BUILD_DIR}/usr/lib/libtinfo.so.5.7
-unset ln
-
+install --mode=755 --owner=0 --group=0 dropbearmulti "${installDir}"
+pushd "${installDir}" >/dev/null 2>&1
+rm --force dbclient
+rm --force dropbearkey
+rm --force dropbearconvert
+rm --force scp
+rm --force ../sbin/dropbear
+link dropbearmulti dbclient
+link dropbearmulti dropbearkey
+link dropbearmulti dropbearconvert
+link dropbearmulti scp
+link dropbearmulti ../sbin/dropbear
+popd >/dev/null 2>&1
 source "${TTYLINUX_XTOOL_DIR}/_xbt_env_clr"
 cd ..
 
-echo "Copying ${PKG_NAME} ttylinux-specific components to build-root."
 if [[ -d "rootfs/" ]]; then
 	find "rootfs/" ! -type d -exec touch {} \;
 	cp --archive --force rootfs/* "${TTYLINUX_BUILD_DIR}"

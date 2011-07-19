@@ -1,0 +1,28 @@
+diff -u lilo-23.2-old/Makefile lilo-23.2/Makefile
+--- lilo-23.2-old/Makefile	2011-04-28 15:35:13.733590204 +1000
++++ lilo-23.2/Makefile	2011-04-28 15:36:16.822478297 +1000
+@@ -38,7 +38,6 @@
+ #
+ all: test
+ 	$(MAKE) -C src all
+-	$(MAKE) -C images all
+ 
+ #
+ # everything above plus the statically linked version
+diff -u lilo-23.2-old/make.vars lilo-23.2/make.vars
+--- lilo-23.2-old/make.vars	2011-04-28 15:35:13.731590432 +1000
++++ lilo-23.2/make.vars	2011-04-28 15:37:33.839797456 +1000
+@@ -99,9 +99,9 @@
+   cat $$DESTDIR/etc/lilo.defines; else echo $(CONFIG); fi ) | \
+   sed 's/-D/-DLCF_/g'`
+ LILO=-DLILO=0xbb920890
+-KVER=`if [ -f /usr/include/linux/version.h ]; then echo -DHAS_VERSION_H; fi`
+-HDM=`if [ -f /usr/include/libdevmapper.h ]; then echo -DHAS_LIBDEVMAPPER_H; fi`
+-DEVMAPPER=`if [ -f /usr/include/libdevmapper.h ]; then echo "-ldevmapper"; fi`
++KVER=-DHAS_VERSION_H
++HDM=
++DEVMAPPER=
+ 
+ TMP=_TmP_
+ 
+
