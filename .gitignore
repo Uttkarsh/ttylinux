@@ -1,0 +1,7 @@
+cross-tools*
+
+xbuildtool-0.1/xbt-build-config.sh
+xbuildtool-0.1/xbt-build-env.sh
+xbuildtool-0.1/build
+xbuildtool-0.1/bin-link
+xbuildtool-0.1/pkg-src/*
