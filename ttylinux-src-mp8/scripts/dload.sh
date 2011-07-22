@@ -154,10 +154,10 @@ return 0
 # Set up the shell functions and environment variables.
 # *****************************************************************************
 
-K_CACHEDIR=~/Download
-
 source ./ttylinux-config.sh
 source ${TTYLINUX_DIR}/scripts/_functions.sh
+
+K_CACHEDIR=$DOWNLOAD_CACHE_DIR
 
 dist_config_setup || exit 1
 
@@ -176,15 +176,16 @@ done
 unset pkgFile
 unset pListF
 
-case ${TTYLINUX_LOADER%%-*} in
-	lilo)
-		dload_get_file ${TTYLINUX_LOADER} tar.gz "http://alioth.debian.org/frs/download.php/3309/"
-		;;
-	yaboot)
-		dload_get_file ${TTYLINUX_LOADER} tar.gz "http://yaboot.ozlabs.org/releases/"
-		;;
-	*) ;;
-esac
+# TTYLINUX_LOADER unbound variable
+#case ${TTYLINUX_LOADER%%-*} in
+#	lilo)
+#		dload_get_file ${TTYLINUX_LOADER} tar.gz "http://alioth.debian.org/frs/download.php/3309/"
+#		;;
+#	yaboot)
+#		dload_get_file ${TTYLINUX_LOADER} tar.gz "http://yaboot.ozlabs.org/releases/"
+#		;;
+#	*) ;;
+#esac
 
 
 # *****************************************************************************

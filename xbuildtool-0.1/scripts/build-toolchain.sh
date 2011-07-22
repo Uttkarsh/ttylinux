@@ -488,7 +488,6 @@ if [[ $# -gt 0 ]]; then A_ARG1="$1"; else A_ARG1=""; fi
 
 K_BLD_CFG_FILE="./xbt-build-config.sh"
 K_BLD_ENV_FILE="./xbt-build-env.sh"
-K_CACHEDIR=~/Download
 K_CONSOLE_FD=1
 K_ERR=0
 K_EXT=".tar.bz2 .tar.gz .tgz"
@@ -539,6 +538,7 @@ if [[ ! -f ${K_BLD_ENV_FILE} ]]; then
 	exit 1
 fi
 source ${K_BLD_ENV_FILE}
+K_CACHEDIR=$XBT_CACHE_DIR
 
 # Load the build configuration.
 #
@@ -634,13 +634,14 @@ unset THREAD_MODEL
 #
 [[ -n "${XBT_GMP}"    ]] && _gmp=${XBT_GMP}           || _gmp="no GMP"
 [[ -n "${XBT_MPFR}"   ]] && _mpfr=${XBT_MPFR}         || _mpfr="no MPFR"
+[[ -n "${XBT_MPC}"    ]] && _mpc=${XBT_MPC}           || _mpc="no MPC"
 [[ -n "${XBT_LIBC_P}" ]] && _libc_p="[${XBT_LIBC_P}]" || _libc_p=""
 echo ""
 echo "xbuildtool configured for cross-development tool chain:"
 echo ""
 echo "  Host: ${XBT_HOST}"
 echo "Target: ${XBT_TARGET}"
-echo " Tools: ${XBT_BINUTILS} ${XBT_GCC} [${_gmp}, ${_mpfr}]"
+echo " Tools: ${XBT_BINUTILS} ${XBT_GCC} [${_gmp}, ${_mpfr}, ${_mpc}]"
 echo "  Libc: ${XBT_LIBC} ${_libc_p}"
 echo " Linux: ${XBT_LINUX_ARCH} ${XBT_LINUX}"
 echo ""
@@ -649,6 +650,7 @@ echo "  use thread model: ${XBT_THREAD_MODEL}"
 echo ""
 unset _gmp
 unset _mpfr
+unset _mpc
 unset _libc_p
 
 
@@ -686,6 +688,7 @@ echo "i> Local cache directory: ${K_CACHEDIR}"
 xbt_get_file "${XBT_BINUTILS}" ${XBT_BINUTILS_URL}
 xbt_get_file "${XBT_GMP}"      ${XBT_GMP_URL}
 xbt_get_file "${XBT_MPFR}"     ${XBT_MPFR_URL}
+xbt_get_file "${XBT_MPC}"      ${XBT_MPC_URL}
 xbt_get_file "${XBT_GCC}"      ${XBT_GCC_URL}
 xbt_get_file "${XBT_LIBC}"     ${XBT_LIBC_URL}
 xbt_get_file "${XBT_LIBC_P}"   ${XBT_LIBC_P_URL}
@@ -696,6 +699,7 @@ K_ERR=0 # Expect xbt_chk_file() to set K_ERR=1 on error.
 xbt_chk_file "${XBT_BINUTILS}" ${XBT_BINUTILS_MD5SUM}
 xbt_chk_file "${XBT_GMP}"      ${XBT_GMP_MD5SUM}
 xbt_chk_file "${XBT_MPFR}"     ${XBT_MPFR_MD5SUM}
+xbt_chk_file "${XBT_MPC}"      ${XBT_MPC_MD5SUM}
 xbt_chk_file "${XBT_GCC}"      ${XBT_GCC_MD5SUM}
 xbt_chk_file "${XBT_LIBC}"     ${XBT_LIBC_MD5SUM}
 xbt_chk_file "${XBT_LIBC_P}"   ${XBT_LIBC_P_MD5SUM}

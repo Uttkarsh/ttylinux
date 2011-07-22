@@ -69,8 +69,8 @@
 #TTYLINUX_TARGET="ut-beagle_xm-armv7"		# ut - Medium System
 #TTYLINUX_TARGET="ut-macintosh_g4-powerpc"	# ut - Medium System
 #TTYLINUX_TARGET="ws-pc-i486"			# ws - Larger System
-TTYLINUX_TARGET="ws-pc-i686"			# ws - Larger System
-#TTYLINUX_TARGET="ws-pc-x86_64"			# ws - Larger System
+#TTYLINUX_TARGET="ws-pc-i686"			# ws - Larger System
+TTYLINUX_TARGET="ws-pc-x86_64"			# ws - Larger System
 #TTYLINUX_TARGET="ws-macintosh_g4-powerpc"	# ws - Larger System
 
 
@@ -144,6 +144,15 @@ TTYLINUX_SITE="on"  # Whether to invoke the site scripts.
 #
 CROSSTOOLS_DIR="$(pwd)"    # Old Historical Value
 CROSSTOOLS_DIR="$(pwd)/.." # New Convention
+
+
+# download cache
+# --------------
+#
+# This specifies the location of the download cache. This location is
+# checked before any files are downloaded.
+#
+DOWNLOAD_CACHE_DIR=~/Downloads
 
 
 # *****************************************************************************
@@ -226,7 +235,7 @@ case "${TTYLINUX_CLASS}-${TTYLINUX_CPU}" in
 	'ut-powerpc')	_libc_linux="2.13-2.6.38.1" ;;
 	'ws-i486')	_libc_linux="2.13-2.6.38.1" ;;
 	'ws-i686')	_libc_linux="2.13-2.6.38.1" ;;
-	'ws-x86_64')	_libc_linux="2.13-2.6.38.1" ;;
+	'ws-x86_64')	_libc_linux="2.13-2.6.39.3" ;;
 	'ws-powerpc')	_libc_linux="2.13-2.6.38.1" ;;
 esac
 XBT_DIR="${CROSSTOOLS_DIR}/cross-tools-${_libc_linux}"

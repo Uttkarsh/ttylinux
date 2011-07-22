@@ -79,6 +79,10 @@ XBT_MPFR=""
 XBT_MPFR_MD5SUM=""
 XBT_MPFR_URL=""
 
+XBT_MPC=""
+XBT_MPC_MD5SUM=""
+XBT_MPC_URL=""
+
 XBT_GCC=""
 XBT_GCC_MD5SUM=""
 XBT_GCC_URL=""
@@ -91,6 +95,9 @@ for (( i=0 ; i<${#_GCC[@]} ; i=(($i+1)) )); do
 		XBT_MPFR="${_MPFR[$i]}"
 		XBT_MPFR_MD5SUM="${_MPFR_MD5SUM[$i]}"
 		XBT_MPFR_URL="${_MPFR_URL[$i]}"
+		XBT_MPC="${_MPC[$i]}"
+		XBT_MPC_MD5SUM="${_MPC_MD5SUM[$i]}"
+		XBT_MPC_URL="${_MPC_URL[$i]}"
 		XBT_GCC="${_GCC[$i]}"
 		XBT_GCC_MD5SUM="${_GCC_MD5SUM[$i]}"
 		XBT_GCC_URL="${_GCC_URL[$i]}"
@@ -104,6 +111,9 @@ unset _GMP_URL
 unset _MPFR
 unset _MPFR_MD5SUM
 unset _MPFR_URL
+unset _MPC
+unset _MPC_MD5SUM
+unset _MPC_URL
 unset _GCC
 unset _GCC_MD5SUM
 unset _GCC_URL
@@ -172,7 +182,7 @@ echo -n "${msg}"          >&${CONSOLE_FD}
 xbt_print_dots_35 ${#msg} >&${CONSOLE_FD}
 echo -n " "               >&${CONSOLE_FD}
 
-# Find, uncompress and untarr ${XBT_GCC}.
+# Find, uncompress and untar ${XBT_GCC}.
 #
 xbt_src_get ${XBT_GCC}
 
@@ -185,6 +195,10 @@ fi
 if [[ -n "${XBT_MPFR}" ]]; then
 	tar xf ${XBT_SOURCE_DIR}/${XBT_MPFR}.tar.bz2
 	mv ${XBT_MPFR} ${XBT_GCC}/mpfr
+fi
+if [[ -n "${XBT_MPC}" ]]; then
+	tar xf ${XBT_SOURCE_DIR}/${XBT_MPC}.tar.gz
+	mv ${XBT_MPC} ${XBT_GCC}/mpc
 fi
 
 cd ${XBT_GCC}
@@ -223,8 +237,11 @@ echo "# XBT_CONFIG **********"
 	--disable-multilib \
 	--disable-shared \
 	--disable-threads \
+	--disable-nls \
 	--with-newlib \
 	--with-sysroot=${XBT_XTARG_DIR} \
+	--without-ppl \
+	--without-cloog \
 	--without-headers || exit 1
 
 # Build GCC.
@@ -282,7 +299,7 @@ echo -n "${msg}"          >&${CONSOLE_FD}
 xbt_print_dots_35 ${#msg} >&${CONSOLE_FD}
 echo -n " "               >&${CONSOLE_FD}
 
-# Find, uncompress and untarr ${XBT_GCC}.
+# Find, uncompress and untar ${XBT_GCC}.
 #
 xbt_src_get ${XBT_GCC}
 
@@ -295,6 +312,10 @@ fi
 if [[ -n "${XBT_MPFR}" ]]; then
 	tar xf ${XBT_SOURCE_DIR}/${XBT_MPFR}.tar.bz2
 	mv ${XBT_MPFR} ${XBT_GCC}/mpfr
+fi
+if [[ -n "${XBT_MPC}" ]]; then
+	tar xf ${XBT_SOURCE_DIR}/${XBT_MPC}.tar.gz
+	mv ${XBT_MPC} ${XBT_GCC}/mpc
 fi
 
 cd ${XBT_GCC}
@@ -409,6 +430,10 @@ fi
 if [[ -n "${XBT_MPFR}" ]]; then
 	tar xf ${XBT_SOURCE_DIR}/${XBT_MPFR}.tar.bz2
 	mv ${XBT_MPFR} ${XBT_GCC}/mpfr
+fi
+if [[ -n "${XBT_MPC}" ]]; then
+	tar xf ${XBT_SOURCE_DIR}/${XBT_MPC}.tar.gz
+	mv ${XBT_MPC} ${XBT_GCC}/mpc
 fi
 
 cd ${XBT_GCC}

@@ -217,7 +217,6 @@ usr/include/drm/drm.h
 usr/include/drm/drm_mode.h
 usr/include/drm/drm_sarea.h
 usr/include/drm/i810_drm.h
-usr/include/drm/i830_drm.h
 usr/include/drm/i915_drm.h
 usr/include/drm/mga_drm.h
 usr/include/drm/nouveau_drm.h

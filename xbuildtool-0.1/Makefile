@@ -89,16 +89,16 @@ help:
 	@echo "make mipsel-2.9-gnu ....... Make the ttylinux sm-malta_lv-mipsel"
 	@echo "                            target cross-development tool chain."
 	@echo ""
-	@echo "make i486-2.13-gnu ........ Make the ttylinux ut|ws-pc-i486"
+	@echo "make i486-2.12.1-gnu ...... Make the ttylinux ut|ws-pc-i486"
 	@echo "                            target cross-development tool chain."
 	@echo ""
-	@echo "make i686-2.13-gnu ........ Make the ttylinux ut|ws-pc-i686"
+	@echo "make i686-2.12.1-gnu ...... Make the ttylinux ut|ws-pc-i686"
 	@echo "                            target cross-development tool chain."
 	@echo ""
-	@echo "make x86_64-2.13-gnu ...... Make the ttylinux ut|ws-pc-x86_64"
+	@echo "make x86_64-2.12.1-gnu .... Make the ttylinux ut|ws-pc-x86_64"
 	@echo "                            target cross-development tool chain."
 	@echo ""
-	@echo "make powerpc-2.13-gnu ..... Make the ttylinux"
+	@echo "make powerpc-2.12.1-gnu ... Make the ttylinux"
 	@echo "                            ut_ws-macintosh_g4-powerpc-ut|ws"
 	@echo "                            target cross-development tool chain."
 	@echo ""
@@ -132,14 +132,19 @@ mipsel-2.9-gnu:
 	cp config/ttylinux-mipsel-2.9-gnu.cfg xbt-build-config.sh
 	./scripts/build-toolchain.sh
 
-i486-2.13-gnu:
+i486-2.12.1-gnu:
 	rm -f xbt-build-config.sh
-	cp config/ttylinux-i486-2.13-gnu.cfg xbt-build-config.sh
+	cp config/ttylinux-i486-2.12.1-gnu.cfg xbt-build-config.sh
 	./scripts/build-toolchain.sh
 
-i686-2.13-gnu:
+i686-2.12.1-gnu:
 	rm -f xbt-build-config.sh
-	cp config/ttylinux-i686-2.13-gnu.cfg xbt-build-config.sh
+	cp config/ttylinux-i686-2.12.1-gnu.cfg xbt-build-config.sh
+	./scripts/build-toolchain.sh
+
+x86_64-2.12.1-gnu:
+	rm -f xbt-build-config.sh
+	cp config/ttylinux-x86_64-2.12.1-gnu.cfg xbt-build-config.sh
 	./scripts/build-toolchain.sh
 
 x86_64-2.13-gnu:
@@ -147,9 +152,9 @@ x86_64-2.13-gnu:
 	cp config/ttylinux-x86_64-2.13-gnu.cfg xbt-build-config.sh
 	./scripts/build-toolchain.sh
 
-powerpc-2.13-gnu:
+powerpc-2.12.1-gnu:
 	rm -f xbt-build-config.sh
-	cp config/ttylinux-powerpc-2.13-gnu.cfg xbt-build-config.sh
+	cp config/ttylinux-powerpc-2.12.1-gnu.cfg xbt-build-config.sh
 	./scripts/build-toolchain.sh
 
 

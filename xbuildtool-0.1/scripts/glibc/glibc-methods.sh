@@ -198,7 +198,9 @@ CFLAGS="${XBT_CFLAGS} -O2" \
 	--with-headers=${XBT_XTARG_DIR}/usr/include \
 	${WITH_TLS_TRHEAD} \
 	--without-cvs \
-	--without-gd || exit 1
+	--without-gd \
+	libc_cv_forced_unwind=yes \
+	libc_cv_c_cleanup=yes || exit 1
 
 # Install GLIBC header files.
 #

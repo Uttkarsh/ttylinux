@@ -218,6 +218,19 @@ xbt_prog_link "strip"
 
 
 # *****************************************************************************
+# Try to discover a cache directory.
+# *****************************************************************************
+
+CACHEDIR=${XBT_CACHE_DIR:-}
+if [[ -z ${CACHEDIR} ]]; then
+	for dir in ~/Downloads ~/Download ; do
+		if [[ -d $dir ]]; then
+			CACHEDIR="$dir"
+		fi
+	done
+fi
+
+# *****************************************************************************
 # Create the site configuration file.
 # *****************************************************************************
 
@@ -242,6 +255,7 @@ echo "export XBT_SOURCE_DIR=\"\${XBT_DIR}/pkg-src\""   >>"${K_BLD_ENV_FILE}"
 echo "export XBT_SCRIPT_DIR=\"\${XBT_DIR}/scripts\""   >>"${K_BLD_ENV_FILE}"
 echo "export XBT_BUILD=\"${MACHTYPE}\""                >>"${K_BLD_ENV_FILE}"
 echo "export XBT_HOST=\"${MACHTYPE}\""                 >>"${K_BLD_ENV_FILE}"
+echo "export XBT_CACHE_DIR=\"${CACHEDIR}\""            >>"${K_BLD_ENV_FILE}"
 echo "export ncpus=${ncpus}"                           >>"${K_BLD_ENV_FILE}"
 
 echo "=> XBT_DIR=\"$(pwd)\""
@@ -253,6 +267,7 @@ echo "=> XBT_SOURCE_DIR=\"\${XBT_DIR}/pkg-src\""
 echo "=> XBT_SCRIPT_DIR=\"\${XBT_DIR}/scripts\""
 echo "=> XBT_BUILD=\"${MACHTYPE}\""
 echo "=> XBT_HOST=\"${MACHTYPE}\""
+echo "=> XBT_CACHE_DIR=\"${CACHEDIR}\""
 echo "=> ncpus=${ncpus}"
 
 unset ncpus

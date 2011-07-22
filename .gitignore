@@ -1,7 +1,27 @@
+# Temporary files
+*~
+*.swp
+
+# Cross compiler(s)
 cross-tools*
 
+# Build tools
 xbuildtool-0.1/xbt-build-config.sh
 xbuildtool-0.1/xbt-build-env.sh
 xbuildtool-0.1/build
 xbuildtool-0.1/bin-link
 xbuildtool-0.1/pkg-src/*
+
+# Package sources and binaries
+ttylinux-src-mp8/pkg-src
+ttylinux-src-mp8/pkg-bin
+
+# Build artefacts
+ttylinux-src-mp8/build-root
+ttylinux-src-mp8/img
+ttylinux-src-mp8/var
+
+# Build configuration artefacts
+ttylinux-src-mp8/config/cdrom
+ttylinux-src-mp8/config/kpkgs
+ttylinux-src-mp8/config/kroot
