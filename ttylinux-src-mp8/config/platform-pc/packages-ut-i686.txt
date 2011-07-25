@@ -12,7 +12,7 @@ ttylinux-basefs-1.0 ............................ (local)
 # Core GNU System [libraries]
 # *********************************************************************************************************************************
 
-glibc-2.13 ..................................... (cross-tools)
+glibc-2.12.1 ................................... (cross-tools)
 ncurses-5.7 .................................... tar.gz  http://ftp.gnu.org/gnu/ncurses/
 
 
@@ -24,7 +24,7 @@ bash-4.1 ....................................... tar.gz  http://ftp.gnu.org/gnu/
 busybox-1.18.4 ................................. tar.bz2 http://www.busybox.net/downloads/
 e2fsprogs-1.41.12 .............................. tar.gz  http://prdownloads.sourceforge.net/e2fsprogs/
 iptables-1.4.9.1 ............................... tar.bz2 ftp://ftp.netfilter.org/pub/iptables/
-lilo-23.2 ...................................... tar.gz  http://lilo.alioth.debian.org/ftp/sources
+lilo-23.1 ...................................... tar.gz  http://lilo.alioth.debian.org/ftp/upstream/sources
 module-init-tools-3.12 ......................... tar.bz2 http://www.kernel.org/pub/linux/utils/kernel/module-init-tools
 ttylinux-utils-1.3 ............................. (local)
 udev-163 ....................................... tar.bz2 http://www.kernel.org/pub/linux/utils/kernel/hotplug
@@ -35,7 +35,7 @@ util-linux-ng-2.18 ............................. tar.bz2 http://www.kernel.org/p
 # Daemons and Servers
 # *********************************************************************************************************************************
 
-dropbear-0.53.1 ................................ tar.bz2 http://matt.ucc.asn.au/dropbear/releases
+dropbear-0.52 .................................. tar.bz2 http://matt.ucc.asn.au/dropbear
 gpm-1.20.6 ..................................... tar.bz2 http://www.nico.schottelius.org/software/gpm/archives
 ppp-2.4.5 ...................................... tar.gz  ftp://ftp.samba.org/pub/ppp/
 
