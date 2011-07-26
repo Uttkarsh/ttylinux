@@ -202,7 +202,7 @@ case "${TTYLINUX_CLASS}-${TTYLINUX_CPU}" in
 	'ut-powerpc')	fsLb=24 ; TTYLINUX_VERSION="12.6" ;;
 	'ws-i486')	fsLb=64 ; TTYLINUX_VERSION="12.6" ;;
 	'ws-i686')	fsLb=64 ; TTYLINUX_VERSION="12.6" ;;
-	'ws-x86_64')	fsLb=64 ; TTYLINUX_VERSION="12.6" ;;
+	'ws-x86_64')	fsLb=128 ; TTYLINUX_VERSION="12.6" ;;
 	'ws-powerpc')	fsLb=64 ; TTYLINUX_VERSION="12.6" ;;
 esac
 if [[ ${TTYLINUX_FSI_SIZE} -lt ${fsLb} ]]; then TTYLINUX_FSI_SIZE=${fsLb}; fi
